@@ -1,0 +1,504 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/site.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="js/jquery-tooltip/jquery.tooltip.css" />
+    <link href="http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono" rel="stylesheet" type="text/css" />
+    <link href='http://fonts.googleapis.com/css?family=Delius+Swash+Caps|Handlee' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+</head>
+<body>
+    <div id="container">
+        <div id="container-wrapper">
+            <div id="header"></div>
+            <div id="caroufredsel">
+                <!-- SLIDE 1 -->
+                <div class="slide styling" id="welcome-slide">
+                    <h3>CSS3 Introduction</h3>
+                    <img id="animated_img" src="image/w3css3_nomirror.gif" alt="CSS3">
+                    <div class="slide-content">
+                        <p><strong>Vu Quang Son</strong><br>
+                        <span>sonvq@qsoftvietnam.com</span></p>
+                    </div>
+                </div>
+                <!-- SLIDE 2 -->
+                <div class="slide styling" id="welcome-slide">
+                    <h3>Table Of Content</h3>
+                    <section>
+                    <pre>    
+    <b>CSS3 Borders                             CSS3 Multiple Columns</b><br>
+    <b>CSS3 Backgrounds                         CSS3 Transitions</b><br>
+    <b>CSS3 Gradients                           CSS3 Transforms</b><br>
+    <b>CSS3 Opacity                             CSS3 Webfonts</b><br>
+    <b>CSS3 Animations                          CSS3 For IE</b><br>
+                    </pre>
+                    </section> 
+                </div>
+                <!-- SLIDE 3 -->
+                <div class="slide styling" id="rounded-corners">
+                    <h1>CSS3 Borders</h1>
+                    <section>
+                    <pre>
+
+    <fieldset id="set1">
+    We can create rounded borders, shadow boxes, and use an image as a border, without a design program (Photoshop,...)<br>
+        <b>border-radius</b> <div title="<span>border-radius:</span> 15px;<br><span>-moz-border-radius:</span> 15px;<br> <span>-webkit-border-radius:</span> 15px;<br>" id="rounded_borders">This box has rounded corners!</div><br>
+        <b>box-shadow</b> <div title="<span>box-shadow:</span> 10px 10px 5px #888888;<br><span>-moz-box-shadow:</span> 10px 10px 5px #888888;<br> <span>-webkit-box-shadow:</span> 10px 10px 5px #888888;" id="box_shadow">Wow look, this box has a shadow!</div><br>
+        <b>border-image (round)</b> <div title="<span>border-image:</span><img src='image/border.png'></img> 30 30 round;<br> <span>-webkit-border-image:</span> url('../image/border.png') 30 30 round; <br><span>-moz-border-image:</span> url('../image/border.png') 30 30 round; <br><span>-o-border-image:</span> url('../image/border.png') 30 30 round;" id="border_image_round">A box uses an image as border!</div><br>
+        <b>border-image (stretch)</b> <div title="<span>border-image:</span><img src='image/border.png'></img> 30 30 stretch;<br> <span>-webkit-border-image:</span> url('../image/border.png') 30 30 stretch; <br><span>-moz-border-image:</span> url('../image/border.png') 30 30 stretch; <br><span>-o-border-image:</span> url('../image/border.png') 30 30 stretch;" id="border_image_stretch">A box uses an image as border!</div><br>
+    </fieldset>
+                    </pre>
+                    </section> 
+                </div>
+                <!-- SLIDE 4 -->
+                <div class="slide styling" id="rounded-corners">
+                    <h1>CSS3 Borders (border-radius)</h1>
+                    <section>
+                    <pre>
+                        Face:           <b>border-radius</b>: <span id="face-rounded-border-value">0</span>px; <input id="face-rounded-border" type="range" min="0" max="146" value="0" onchange="handleCorner(event)">
+                        Left eye:       <b>border-radius</b>: <span id="lefteye-rounded-border-value">0</span>px; <input id="lefteye-rounded-border" type="range" min="0" max="35" value="0" onchange="handleCorner(event)">
+                        Right eye:      <b>border-radius</b>: <span id="righteye-rounded-border-value">0</span>px; <input id="righteye-rounded-border" type="range" min="0" max="35" value="0" onchange="handleCorner(event)">
+                        Base white:     <b>border-radius</b>: <span id="base_white-rounded-border-value">0</span>px; <input id="base_white-rounded-border" type="range" min="0" max="150" value="0" onchange="handleCorner(event)">
+                        Mouth:          <b>border-radius</b>: <span id="mouth-rounded-border-value">0</span>px; <input id="mouth-rounded-border" type="range" min="0" max="120" value="0" onchange="handleCorner(event)">
+                        Nose:           <b>border-radius</b>: <span id="nose-rounded-border-value">0</span>px; <input id="nose-rounded-border" type="range" min="0" max="50" value="0" onchange="handleCorner(event)">
+                        L-black eye:    <b>border-radius</b>: <span id="leftblackeye-rounded-border-value">0</span>px; <input id="leftblackeye-rounded-border" type="range" min="0" max="35" value="0" onchange="handleCorner(event)">
+                        R-black eye:    <b>border-radius</b>: <span id="rightblackeye-rounded-border-value">0</span>px; <input id="rightblackeye-rounded-border" type="range" min="0" max="35" value="0" onchange="handleCorner(event)">
+                    </pre>
+                    <div id="doraemon" class="example"><iframe src="src/write_doraemon.html"></iframe></div>
+                    </section> 
+                </div>
+                <!-- SLIDE 5 -->
+                <div class="slide styling" id="css-shadow">
+                    <h1>CSS3 Borders (Shadows)</h1>
+                    <section>
+                        <pre class="two-column"><b>text-shadow</b>: 
+    rgba(64, 64, 64, 0.5) 
+    <span id="shadows-text-x-value">0</span>px <input id="shadows-text-x" type="range" min="-9" max="9" value="0" onchange="changeShadow(event)">
+    <span id="shadows-text-y-value">0</span>px <input id="shadows-text-y" type="range" min="-9" max="9" value="0" onchange="changeShadow(event)">
+    <span id="shadows-text-size-value">0</span>px <input id="shadows-text-size" type="range" min="0" max="9" value="0" onchange="changeShadow(event)">
+<br><b>box-shadow</b>: 
+    rgba(0, 0, 255, 0.5) 
+    <span id="shadows-box-x-value">0</span>px <input id="shadows-box-x" type="range" min="-9" max="9" value="0" onchange="changeShadow(event)">
+    <span id="shadows-box-y-value">0</span>px <input id="shadows-box-y" type="range" min="-9" max="9" value="0" onchange="changeShadow(event)">
+    <span id="shadows-box-size-value">0</span>px <input id="shadows-box-size" type="range" min="0" max="9" value="0" onchange="changeShadow(event)">
+                        </pre>
+
+                        <div id="shadow-example" class="example">
+                            QSoft blue football team is the best :P
+                        </div>
+                    </section>
+                </div>
+                <!-- SLIDE 6 -->
+                <div class="slide styling" id="border-image">
+                    <h1>CSS3 Borders (border-image)</h1>
+                    <section>
+<pre><div class="img-frame"><img id="border_image" src="image/border.png" width="100" height="100" alt="Border image No.1" /></div>
+<div style="clear:both;"></div>
+<b>border-image</b>: url(<span id="border_image_name">border</span>.png)</span>  <span id="border-image-slice-span">30</span> <input id="border-image-slice" type="range" min="0" max="60" value="30" onchange="changeBorderImageStyle(event)"><span id="border-image-width-span">30</span> <input id="border-image-width" type="range" min="0" max="60" value="30" onchange="changeBorderImageStyle(event)">  <select id="border-image-outset" onchange='changeBorderImageStyle(event)'>
+    <option value="stretch">stretch</option>
+    <option value="repeat">repeat</option>
+    <option value="round">round</option>
+</select>  <select id="border-image-repeat" onchange='changeBorderImageStyle(event)'>
+    <option value="stretch">stretch</option>
+    <option value="repeat">repeat</option>
+    <option value="round">round</option>
+</select>;
+<b>border-width:</b> <span id="border_width_value">30</span>px  <input id="border_width_range" type="range" min="0" max="60" value="30" onchange="changeBorderImageStyle(event)" />;
+</pre>
+                    <div class="example">
+                    <div id="border-image-example" style="border-width: 30px; -webkit-border-image: url(image/border.png) 30 30 stretch stretch;"></div>
+                    </div>
+                    </section>
+                </div>
+                <!-- SLIDE 7 -->
+                <div class="slide styling" id="css-background">
+                    <h1>CSS3 Background</h1>
+                    <section>
+                        <h2>Background sizing</h2>
+<pre>#logo {
+    background: url(qsoft-logo.gif) center center no-repeat;
+    <b>background-size:</b> <select onchange="changeBackgroundSize(event)">
+      <option>auto</option>
+      <option>contain</option>
+      <option>cover</option>
+      <option>100%</option>
+</select>;
+}
+</pre>
+            <textarea id="background-textarea"></textarea>
+            <h2>Multiple backgrounds</h2>
+<pre>div {
+    <b>background:</b> url(duck.png) <input id="css-background-slide" type="range" min="0" max="1100" value="0" onchange="changeCssBackgroundImageMultiple(event)"> <span id="css-background-slide-value">0</span>px center no-repeat, 
+                url(sea.png) 0 center repeat-x;
+}
+</pre>
+                        <div id="background-example" class="example">Look! Multiple backgrounds</div>
+                    </section>
+                </div>
+                <!-- SLIDE 8 -->
+                <div class="slide styling" id="css-gradients">
+                    <h1>CSS3 Gradients</h1>
+                    <section>
+<pre><h4>background:</h4> <b>-webkit-linear-gradient</b>(<select id="gradients-linear-direction" onchange='changeGradientsLinear(event)'>
+    <option value="left">left</option>
+    <option value="right">right</option>
+    <option value="top">top</option>
+    <option value="bottom">bottom</option>
+    <option value="120deg">120deg</option>
+    <option value="left top">left top</option>
+</select>, <select id="gradients-linear-color1" onchange='changeGradientsLinear(event)'>
+    <option value="red">red</option>
+    <option value="blue">blue</option>
+    <option value="black">black</option>
+    <option value="yellow">yellow</option>
+</select>, <select id="gradients-linear-color2" onchange='changeGradientsLinear(event)'>
+    <option value="blue">blue</option>
+    <option value="red">red</option>
+    <option value="black">black</option>
+    <option value="yellow">yellow</option>
+</select>, <select id="gradients-linear-color3" onchange='changeGradientsLinear(event)'>
+    <option value="yellow">yellow</option>
+    <option value="red">red</option>
+    <option value="blue">blue</option>
+    <option value="black">black</option>
+</select>);                   
+</pre>
+            <div id="gradients-linear-example" class="example"></div>
+<br />
+<pre><h4>background:</h4> <b>-webkit-radial-gradient</b>(<select id="gradients-radial-shape" onchange='changeGradientsRadial(event)'>
+    <option value="ellipse">ellipse</option>
+    <option value="circle">circle</option>
+</select>, red <span id="red_percent_span">20</span>%  <input class="small" id="red_percent_value" type="range" min="0" max="100" value="20" onchange="changeGradientsRadial(event)" />, yellow <span id="yellow_percent_span">50</span>%  <input class="small" id="yellow_percent_value" type="range" min="0" max="100" value="50" onchange="changeGradientsRadial(event)" />, green <span id="green_percent_span">80</span>%  <input class="small" id="green_percent_value" type="range" min="0" max="100" value="80" onchange="changeGradientsRadial(event)" />);
+</pre>
+            <div id="gradients-radial-example" class="example"></div>
+                    </section>
+                </div>
+                <!-- SLIDE 9 -->
+                <div class="slide styling" id="css-opacity">
+                    <h1>CSS3 Opacity</h1>
+                    <section>
+                        <pre>   
+                                Color:      <b>rgba</b>(255, 0, 0, <span id="opacity-color-value">0.75</span>); <input id="opacity-color" type="range" min="0" max="100" value="75" onchange="changeOpacity()">
+                                Background: <b>rgba</b>(0, 0, 255, <span id="opacity-background-value">0.75</span>); <input id="opacity-background" type="range" min="0" max="100" value="75" onchange="changeOpacity()">
+                        </pre>
+                        <div id="opacity-body">
+                            <div id="opacity-example">
+                                QSoft Vietnam Corp.
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                
+                <!-- SLIDE 10 -->
+                <div class="slide styling" id="css-animation">
+                    <h1>CSS3 Animations</h1>
+                    <section>
+<pre><b>@-webkit-keyframes</b> <em>myanimation</em> {
+    <b>from</b> {
+        opacity: 0.0; font-size: 50px; background: green;
+    }
+    <b>to</b> {
+        opacity: 1.0; font-size: 100px; background: red;
+    }
+}
+
+div {
+    <b>-webkit-animation-name</b>: <em>myanimation</em>;
+    <b>-webkit-animation-duration</b>: 2s;
+    <b>-webkit-animation-iteration-count</b>: infinite;
+    <b>-webkit-animation-timing-function</b>: ease-in-out;
+    <b>-webkit-animation-direction</b>: alternate;
+}
+</pre>
+                        <div id="animation-example" class="example">
+                        STOP
+                        </div>
+                    </section>
+                </div>
+                <!-- Slide 11 -->
+                <div class="slide styling" id="css-columns">
+                    <h1>CSS3 Multiple Columns</h1>
+                    <section>
+<pre><b>-webkit-column-count</b>: <span id="columns-no-value">2</span>; <input type="range" min="1" max="6" value="2" onchange="changeColumnNoSlider(event)">
+<b>-webkit-column-rule</b>: 1px solid #bbb;
+<b>-webkit-column-gap</b>: 2em;</pre>
+
+                        <div id="columns-no-example" class="example">
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
+
+                            <p>In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</p>
+
+                            <p>Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.</p>
+
+                            <p>Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien.</p>
+
+                            <p>Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Nam pretium turpis et arcu.</p>
+                        </div>
+                    </section>
+                </div>
+                <!-- Slide 12 -->
+                <div class="slide styling" id="css-transitions">
+                    <h1>CSS3 Transitions</h1>
+                    <section>
+                        <div class="transitions example">
+                            <div id="transitions-box-1"></div>
+                        </div>
+<pre><h4>#box.left</h4>  { margin-left: 0; }
+<h4>#box.right</h4> { margin-left: 1100px; }
+
+document.getElementById('box').className = 'left'; <button class="left" onclick="transitionLeft(1)"></button>
+document.getElementById('box').className = 'right'; <button class="right" onclick="transitionRight(1)"></button>
+</pre>
+                        <div class="transitions example">
+                            <div id="transitions-box-2"></div>
+                        </div>
+<pre><h4>#box</h4> { <b>-webkit-transition</b>: margin-left 4s ease-in-out; }
+
+document.getElementById('box').className = 'left'; <button class="left" onclick="transitionLeft(2)"></button>
+document.getElementById('box').className = 'right'; <button class="right" onclick="transitionRight(2)"></button>
+</pre>
+                    </section>
+                </div>
+                <!-- Slide 13 -->
+                <div class="slide styling" id="css-transforms">
+                    <h1>CSS3 Transforms</h1>
+                    <section>          
+<pre id="threed-example">
+<p class="center">
+Hover over me:
+</p>
+</pre>
+
+<pre><h4>#rotate-example</h4> {
+    <b>-webkit-transition:</b> -webkit-transform 1s ease-in-out;
+}
+
+<h4>#rotate-example:hover</h4> {
+    <b>-webkit-transform:</b> rotateZ(-180deg) scale(0.5, 0.5);
+}
+</pre>
+                    </section>
+                </div>
+                <!-- Slide 14 -->
+                <div class="slide styling" id="web-fonts">
+                    <h1>CSS3 Webfonts</h1>
+                    <section>
+<pre>
+<h4>@font-face</h4> {
+    <b>font-family:</b> 'Droid Sans';
+    <b>src:</b> url(Droid_Sans.ttf);
+}
+
+<h4>link</h4> href="http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono" rel="stylesheet" type="text/css" />
+
+<h4>header</h4> {
+    <b>font-family:</b> <select id="webfont-select" onchange='changeWebfont(event)'>
+    <option value="Droid Sans">Droid Sans</option>
+    <option value="Delius swash caps">Delius swash caps</option>
+    <option value="Oleo Script Swash Caps">Oleo Script Swash Caps</option>
+</select>;
+}</pre>
+
+            <div id="fontface-sample" class="example">
+              <span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</span>
+            </div>
+
+                    </section>
+                </div>
+                <!-- Slide 15 -->
+                <div class="slide styling" id="css-pie">
+                    <h1>CSS3 For IE</h1>
+                    <section>
+<pre>
+<fieldset id="set2">
+<b>CSS3 PIE</b> (<a title="border: 1px solid #ccc; <br>-webkit-border-radius: 50%; <br>-moz-border-radius: 50%; <br>border-radius: 50%; <br><span>behavior: url(/css/pie/PIE.htc);</span>" href="http://css3pie.com/">http://css3pie.com/</a>)<br>
+<b>Ultimate CSS Gradient Generator</b> (<a title="<span>background:</span> #e4f5fc; <h4>/* Old browsers */</h4><br>
+<span>background:</span> -moz-linear-gradient(top,  #e4f5fc 0%, #2ab0ed 100%); <h4>/* FF3.6+ */</h4><br>
+<span>background:</span> -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e4f5fc), color-stop(100%,#2ab0ed)); <h4>/* Chrome,Safari4+ */</h4><br>
+<span>background:</span> -webkit-linear-gradient(top,  #e4f5fc 0%,#2ab0ed 100%); <h4>/* Chrome10+,Safari5.1+ */</h4><br>
+<span>background:</span> -o-linear-gradient(top,  #e4f5fc 0%,#2ab0ed 100%); <h4>/* Opera 11.10+ */</h4><br>
+<span>background:</span> -ms-linear-gradient(top,  #e4f5fc 0%,#2ab0ed 100%); <h4>/* IE10+ */</h4><br>
+<span>background:</span> linear-gradient(to bottom,  #e4f5fc 0%,#2ab0ed 100%); <h4>/* W3C */</h4><br>
+<span>filter:</span> progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4f5fc', endColorstr='#2ab0ed', GradientType=0 ); <h4>/* IE6-9 */" href="http://www.colorzilla.com/gradient-editor/">http://www.colorzilla.com/gradient-editor/</a>) <img src="image/sample_gradient.png"><br><br>
+<b>CSS3 Solution</b> (<a title="<span>-webkit-transform:</span> rotate(180deg); <br><span>-moz-transform:</span> rotate(180deg);<br><span>filter:</span> progid:DXImageTransform.Microsoft.BasicImage(rotation=2);" href="http://coding.smashingmagazine.com/2010/04/28/css3-solutions-for-internet-explorer/">http://coding.smashingmagazine.com/2010/04/28/css3-solutions-for-internet-explorer/</a>)<br>
+</fieldset>
+</pre>
+                    </section>
+                </div>
+            </div>
+            <a id="prev" class="" style="display: block;"></a>
+            <a id="next" class="" style="display: block;"></a>
+        </div>
+    </div>
+
+<div id="footer">
+    <script>
+        changeWebfont = function(event) {
+            var el = $('#fontface-sample');
+
+            var font = $('#webfont-select').val();
+
+            el.css( {'text-align': 'center', 'font-size': '35px', 'font-family': font});
+        };
+        
+        function transitionLeft(no) {
+            document.getElementById('transitions-box-' + no).className = 'left';
+        }
+        function transitionRight(no) {
+            document.getElementById('transitions-box-' + no).className = 'right';
+        }
+              
+        function changeColumnNoSlider(event) {
+            var val = event.target.value;
+            document.getElementById('columns-no-value').textContent = val;
+            var el = document.getElementById('columns-no-example');
+            el.style.webkitColumnCount = val;
+            el.style.MozColumnCount = val;
+        }
+        changeGradientsRadial = function(event) {
+            var el = $('#gradients-radial-example');
+
+            var shape = $('#gradients-radial-shape').val();
+            var percent1 = $('#red_percent_value').val();
+            var percent2 = $('#yellow_percent_value').val();
+            var percent3 = $('#green_percent_value').val();
+
+            $('#red_percent_span').text(percent1);
+            $('#yellow_percent_span').text(percent2);
+            $('#green_percent_span').text(percent3);
+
+            el.css( {'border': '150px', 'width': '200px', 'margin': 'auto' , 'background': '-webkit-radial-gradient(' + shape + ', red ' + percent1 + '%, yellow ' + percent2 + '%, green ' + percent3 + '%)'});
+        };
+
+        changeGradientsLinear = function(event) {
+            var el = $('#gradients-linear-example');
+
+            var direction = $('#gradients-linear-direction').val();
+            var color1 = $('#gradients-linear-color1').val();
+            var color2 = $('#gradients-linear-color2').val();
+            var color3 = $('#gradients-linear-color3').val();
+
+            el.css( {'height': '0', 'height': '100px', 'background': '-webkit-linear-gradient(' + direction + ', ' + color1 + ', ' + color2 + ', ' + color3+ ')'});
+        };
+            
+        changeCssBackgroundImageMultiple = function(event) {
+            var el = $('#background-example');
+            
+            var css_background_slide = $('#css-background-slide').val();
+            $('#css-background-slide-value').text(css_background_slide);
+            
+            el.css( { 'color': 'yellow', 'margin-left': '10px', 'padding-left': '28px', 'background': 'url("image/duck.png") ' + css_background_slide + 'px center no-repeat, url("image/sea.png") 0 center repeat-x'} );
+        }
+        
+        function changeBackgroundSize(event) {
+            document.getElementById('background-textarea').style.backgroundSize = event.target.value;
+        }
+              
+        function changeShadow() {
+            var el = document.getElementById('shadow-example');
+
+            var textXVal = document.getElementById('shadows-text-x').value;
+            var textYVal = document.getElementById('shadows-text-y').value;
+            var textSizeVal = document.getElementById('shadows-text-size').value;
+
+            document.getElementById('shadows-text-x-value').textContent = textXVal;
+            document.getElementById('shadows-text-y-value').textContent = textYVal;
+            document.getElementById('shadows-text-size-value').textContent = textSizeVal;
+
+            var boxXVal = document.getElementById('shadows-box-x').value;
+            var boxYVal = document.getElementById('shadows-box-y').value;
+            var boxSizeVal = document.getElementById('shadows-box-size').value;
+
+            document.getElementById('shadows-box-x-value').textContent = boxXVal;
+            document.getElementById('shadows-box-y-value').textContent = boxYVal;
+            document.getElementById('shadows-box-size-value').textContent = boxSizeVal;
+
+            el.style.textShadow = 'rgba(64, 64, 64, 0.5) ' + textXVal + 'px ' + textYVal + 'px ' + textSizeVal + 'px';
+            el.style.webkitBoxShadow = 'rgba(0, 0, 225, 0.5) ' + boxXVal + 'px ' + boxYVal + 'px ' + boxSizeVal + 'px';
+            el.style.MozBoxShadow = 'rgba(0, 0, 225, 0.5) ' + boxXVal + 'px ' + boxYVal + 'px ' + boxSizeVal + 'px';
+        }
+        
+        function handleCorner() {
+
+            var doraemon = document.querySelector('#doraemon iframe').contentWindow.document;
+            var elements = ["face", "lefteye", "righteye", "base_white", "mouth", "nose", "leftblackeye", "rightblackeye"];
+            for (var i = 0; i < elements.length; i++) {
+                var element = elements[i] + '-rounded-border';
+                var borderVal = document.getElementById(element).value;
+                document.getElementById(element + '-value').textContent = borderVal;
+                var faceEl = doraemon.getElementById(elements[i]);
+                faceEl.style.borderRadius = borderVal + 'px';
+                faceEl.style.mozBorderRadius = borderVal + 'px';
+            }
+        }
+        
+        changeBorderImageStyle = function(event) {
+            var el = $('#border-image-example');
+
+            var borderWidth = $('#border_width_range').val();
+            var border_image_slice = $('#border-image-slice').val();
+            var border_image_width = $('#border-image-width').val();
+            var border_image_outset = $('#border-image-outset').val();
+            var border_image_repeat = $('#border-image-repeat').val();
+
+
+            $('#border_width_value').text(borderWidth);
+            $('#border-image-slice-span').text(border_image_slice);
+            $('#border-image-width-span').text(border_image_width);
+
+            el.css( {'border-width': borderWidth+'px', '-webkit-border-image': 'url(image/border.png) ' + border_image_slice + ' ' + border_image_width + ' ' + border_image_outset + ' ' + border_image_repeat});
+        };
+        
+        function changeOpacity() {
+            var textOpacity = (document.getElementById('opacity-color').value / 100).toFixed(2);
+            var backgroundOpacity = (document.getElementById('opacity-background').value / 100).toFixed(2);
+
+            var el = document.getElementById('opacity-example');
+
+            el.style.color = 'rgba(255, 0, 0, ' + textOpacity + ')';
+            el.style.background = 'rgba(0, 0, 255, ' + backgroundOpacity + ')';
+
+            document.getElementById('opacity-color-value').textContent = textOpacity;
+            document.getElementById('opacity-background-value').textContent = backgroundOpacity;
+        }
+
+        changeOpacity();
+        
+        $(document).ready(function() {
+            
+            $('#set1 *').tooltip();
+            $('#set2 *').tooltip();
+            
+            $("#caroufredsel").carouFredSel({
+                responsive: true,
+                width: '100%',
+                items: {
+                    visible: 1,
+                    minimum: 1
+                },
+                scroll: {
+                    fx: "swing",
+                    duration: 1000
+                },
+                prev: {
+                    button: "#prev",
+                    key: "left"
+                },
+                next: {
+                    button: "#next",
+                    key: "right"
+                },
+                auto: {
+                    play: false
+                }
+            });
+        });
+    </script>
+    <script type="text/javascript" src="js/jquery.carouFredSel-6.2.1-packed.js"></script>
+    <script type="text/javascript" src="js/jquery-tooltip/lib/jquery.bgiframe.js"></script>
+    <script type="text/javascript" src="js/jquery-tooltip/lib/jquery.dimensions.js"></script>
+    <script type="text/javascript" src="js/jquery-tooltip/jquery.tooltip.js"></script>
+</div>		
+</body>
+
+</html>

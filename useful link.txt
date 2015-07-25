@@ -1,0 +1,3 @@
+http://stackoverflow.com/questions/2605327/what-are-pros-and-cons-when-choosing-jquery-as-my-primary-javascript-library
+
+https://www.google.com/trends/explore#q=dojo+javascript,jquery+javascript,yui+javascript,prototype+javascript,mootools+javascript
