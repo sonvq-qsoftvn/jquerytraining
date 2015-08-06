@@ -16,8 +16,8 @@ a:active { color: #5A4E41; }
 #container-wrapper {overflow:auto;padding-bottom: 33px;width: 100%;}
 #container-content { padding-bottom: 20px;}
 
-#header { margin: 0 auto; background: url(../image/banner.png) no-repeat; height: 160px; width: 1024px; }
-#footer { margin: 0 auto; background: url(../image/footer.png) no-repeat; position: relative; width: 1024px; margin-top: -33px; height: 33px; clear:both;}
+#header { margin: 0 auto; background: url(../image/qsoftlogo.png) no-repeat; height: 68px; width: 1024px; }
+#footer { margin: 0 auto; background: url(../image/qsoftfooter.png) no-repeat; position: relative; width: 1024px; margin-top: -13px; height: 13px; clear:both; background-size: cover;}
 
 .paginationControl {margin-top: 12px;}
 .caroufredsel_wrapper {overflow: hidden;}
@@ -25,7 +25,7 @@ a:active { color: #5A4E41; }
 #doraemon { height: 320px; }
 #doraemon iframe { width: 100%; height: 100%; border: none; }
 
-#prev, #next{ width: 68px; height: 69px; top: 40px; background: url('../image/prev-big.png') no-repeat top center; display: block; position: absolute; }
+#prev, #next{ width: 68px; height: 69px; top: 60px; background: url('../image/prev-big.png') no-repeat top center; display: block; position: absolute; }
 #prev{ left: 0; }
 #next{ background: url('../image/next-big.png') no-repeat top center; right: 0; }
 #next:hover{ background: url('../image/next-big.png') no-repeat bottom center;  }
@@ -43,7 +43,23 @@ a:active { color: #5A4E41; }
 #tooltip .url {display: none !important; }
 #tooltip h4 { color: orange; }
 
-#animated_img { animation: animated_img 2s 5; border-radius: 5px; animation-iteration-count: 25; -moz-animation: animated_img 2s 5; -moz-border-radius: 5px; -moz-animation-iteration-count: 25; -webkit-animation:animated_img 2s 5; -webkit-border-radius:5px; -webkit-animation-iteration-count: 25; }
+#animated_img { 
+    width: 150px; 
+    height: 150px; 
+    border: 1px solid white; 
+    
+    border-radius: 25px; 
+    -webkit-border-radius:25px; 
+    -moz-border-radius: 25px; 
+    
+    animation: animated_img 2s 5; 
+    -webkit-animation:animated_img 2s 5; 
+    -moz-animation: animated_img 2s 5; 
+    
+    animation-iteration-count: 2;
+    -moz-animation-iteration-count: 2; 
+    -webkit-animation-iteration-count: 2; 
+}
 @-webkit-keyframes animated_img { 0% { -webkit-transform: rotate(0deg); } 100% { -webkit-transform: rotate(360deg) }}
 @-moz-keyframes animated_img { 0% { -moz-transform: rotate(0deg); } 100% { -moz-transform: rotate(360deg) }}
 
