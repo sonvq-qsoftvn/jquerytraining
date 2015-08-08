@@ -1,8 +1,7 @@
-<html>
+<html id="specialstuff">
 <head>
     <link rel="stylesheet" type="text/css" media="screen" href="css/jAlert-v3.css">
     <link rel="stylesheet" type="text/css" media="screen" href="css/site.css">
-    <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
     <link href="http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -59,37 +58,37 @@
                     </section>
                 </div>
                 <!-- SLIDE 4 -->
-<div class="slide styling" id="border-image">
+                <div class="slide styling" id="border-image">
                     <h1>CSS { css() }</h1>
                     <section>
 <pre>
-    <p class="inline"><b>$(e).css('background-color') = <span id="css-background-example"></span></b></p>
-    <p class="inline"><b id="css-multiple-example">$(e).css(['width','height']) =</b></p>
-    <p class="inline"><b>$(e).css('background-color', <select id="css-background-select" onchange='changeCssBackground(this)'>
-        <option value="0.0s"></option>
-        <option value="green">green</option>
-        <option value="blue">blue</option>
-        <option value="orange">orange</option>
-    </select> ) Paint your car as you like :v</b></p>
-    <p class="inline"><b>$(e).css('animation', <select id="css-transitions-select" onchange='changeCssTransitions(this)'>
-        <option value="0.0s"></option>
-        <option value="1.0s">1.0s</option>
-        <option value="0.1s">0.1s</option>
-    </select> )</b></p>
-    <button href="#" 
-            data-content="<span class='blue italic'>// get a single css property</span> <br/>$(<span class='red'>'#example'</span>).css(<span class='red'>'background-color'</span>)<br/><br/>
-            <span class='blue italic'>// get multiple css properties</span><br/>$(<span class='red'>'#example'</span>).css([<span class='red'>'width', 'height'</span>])<br/><br/>
-            <span class='blue italic'>// set a single css property</span><br/>$(<span class='red'>'#example'</span>).css(<span class='red'>'background-color', 'red'</span>)<br/><br/>
-            <span class='blue italic'>// set multiple css properties</span><br/>
-            $(<span class='red'>'#example'</span>).css({<br/>
-            <span class='red'>
-            &nbsp;&nbsp;&nbsp;&nbsp;'WebkitAnimation': 'wheelmove 1s infinite;'<br/>
-            &nbsp;&nbsp;&nbsp;&nbsp;'MozAnimation': &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'wheelmove 1s infinite;'<br/>
-            &nbsp;&nbsp;&nbsp;&nbsp;'MsAnimation': &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'wheelmove 1s infinite;'<br/>
-            &nbsp;&nbsp;&nbsp;&nbsp;'OAnimation': &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'wheelmove 1s infinite;'<br/>
-            &nbsp;&nbsp;&nbsp;&nbsp;'animation': &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'wheelmove 1s infinite;'<br/>
-            </span>})<br/><br/>" 
-        class="modern-btn alert-button" data-show="flipInX" data-hide="flipOutX">CODE</button>
+<p class="inline"><b>$(e).css('background-color') = <span id="css-background-example"></span></b></p>
+<p class="inline"><b id="css-multiple-example">$(e).css(['width','height']) =</b></p>
+<p class="inline"><b>$(e).css('background-color', <select id="css-background-select" onchange='changeCssBackground(this)'>
+    <option value="0.0s"></option>
+    <option value="green">green</option>
+    <option value="blue">blue</option>
+    <option value="orange">orange</option>
+</select> ); Paint your car :v</b></p>
+<p class="inline"><b>$(e).css('animation', <select id="css-transitions-select" onchange='changeCssTransitions(this)'>
+    <option value="0.0s"></option>
+    <option value="1.0s">1.0s</option>
+    <option value="0.1s">0.1s</option>
+</select> )</b></p>
+<button href="#" 
+        data-content="<span class='blue italic'>// get a single css property</span> <br/>$(<span class='red'>'#example'</span>).css(<span class='red'>'background-color'</span>)<br/><br/>
+        <span class='blue italic'>// get multiple css properties</span><br/>$(<span class='red'>'#example'</span>).css([<span class='red'>'width', 'height'</span>])<br/><br/>
+        <span class='blue italic'>// set a single css property</span><br/>$(<span class='red'>'#example'</span>).css(<span class='red'>'background-color', 'red'</span>)<br/><br/>
+        <span class='blue italic'>// set multiple css properties</span><br/>
+        $(<span class='red'>'#example'</span>).css({<br/>
+        <span class='red'>
+        &nbsp;&nbsp;&nbsp;&nbsp;'WebkitAnimation': 'wheelmove 1s infinite;'<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;'MozAnimation': &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'wheelmove 1s infinite;'<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;'MsAnimation': &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'wheelmove 1s infinite;'<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;'OAnimation': &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'wheelmove 1s infinite;'<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;'animation': &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'wheelmove 1s infinite;'<br/>
+        </span>})<br/><br/>" 
+    class="modern-btn alert-button" data-show="zoomInDown" data-hide="zoomOutUp">CODE</button>
 </pre>
 <div class="example relative">
     <div class="car">
@@ -112,6 +111,42 @@
 </div>
                     </section>
                 </div>
+                <!-- SLIDE 5 -->
+                <div class="slide styling" id="border-image">
+                    <h1>CSS { offset() }</h1>
+                    <section>
+<pre>
+<p class="inline"><b>$('.boat').offset() => <span id="boat_offset_sample"></span></b></p>
+<p class="inline"><b>offset({left: <span id="boat_offset_left_value">35</span>% <input onchange="changeOffsetLeft(this)" id="boat_offset_left" type="range" min="5" max="75" value="35" />, top: <span id="boat_offset_top_value">40</span>% <input onchange="changeOffsetTop(this)" id="boat_offset_top" type="range" min="35" max="45" value="40" />})</b> <button class="round-btn" onclick="sailing(event)">Go</button></p>
+<button href="#" 
+        data-content="<span class='blue italic'>// get offset of element</span> <br/><span class='violet'>var</span> offset = $(<span class='red'>'#example'</span>).offset()<br/><span class='violet'>var</span> leftOffset = offset.<span class='violet'>left</span><br/><span class='violet'>var</span> topOffset = offset.<span class='violet'>top</span><br/><br/>
+        <span class='blue italic'>// set offset to an element</span><br/>$(<span class='red'>'#example'</span>).offset({ <span class='red'>top: </span>100, <span class='red'>left: </span>200 })<br/><br/>" 
+    class="modern-btn alert-button" data-show="flipInY" data-hide="flipOutY">CODE</button>
+</pre>
+<div class="example relative background-sea">
+    <div class="boat" onclick="viewOffsetBoat(this);">
+		<img src="image/boat.png" alt="tugboat">
+	</div>
+    
+</div>
+                    </section>
+                </div>
+                <!-- SLIDE 6 -->
+                <div class="slide styling" id="border-image">
+                    <h1>CSS { position() }</h1>
+                    <section>
+<pre>
+<p class="inline"><b>$('.frog').position() => <span id="frog_position_sample"></span></b></p>
+<p class="inline"><b>css({left: <span id="frog_position_left_value">35</span>px <input onchange="changePositionLeft(this)" id="frog_position_left" type="range" min="5" max="700" value="35" />, top: <span id="frog_position_top_value">40</span>px <input onchange="changePositionTop(this)" id="frog_position_top" type="range" min="25" max="220" value="40" />})</b> <button class="round-btn" onclick="swimming(event)">Go</button></p>
+<button href="#" 
+        data-content="<span class='blue italic'>// get position of element</span> <br/><span class='violet'>var</span> position = $(<span class='red'>'#example'</span>).position()<br/><span class='violet'>var</span> leftPosition = position.<span class='violet'>left</span><br/><span class='violet'>var</span> topPosition = position.<span class='violet'>top</span><br/><br/>"
+    class="modern-btn alert-button" data-show="fadeInDown" data-hide="fadeOutUp">CODE</button>
+</pre>
+<div class="example relative background-sea">
+	<img class="mike" src="image/mike.png" onclick="viewPositionFrog(this);">
+</div>
+                    </section>
+                </div>
             </div>
             <a id="prev" class="" style="display: block;"></a>
             <a id="next" class="" style="display: block;"></a>
@@ -120,7 +155,85 @@
 
 <div id="footer">
     <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
-    <script>     
+    <script> 
+        // ------ START CSS { position() }
+        viewPositionFrog = function(element) {
+            var refreshIntervalId = window.setInterval(function(){
+                var position = $(element).position();
+                $('#frog_position_sample').html( "left = " + Math.round(position.left) + "px; top = " + Math.round(position.top) + 'px' );
+            }, 1000);
+            setTimeout(function(){ 
+                clearInterval(refreshIntervalId);
+            }, 10000);
+        };
+        changePositionLeft = function(element) {
+            $('#frog_position_left_value').text($('#frog_position_left').val());
+        };
+        
+        changePositionTop = function(element) {
+            $('#frog_position_top_value').text($('#frog_position_top').val());
+        };
+        
+        swimming = function(event) {
+            var frogPositionLeft = $('#frog_position_left').val(),
+                    frogPositionTop = $('#frog_position_top').val();
+            $('.mike').css({top: frogPositionTop,left: frogPositionLeft});
+            var refreshIntervalId = window.setInterval(function(){
+                var position = $('.mike').position();
+                $('#frog_position_sample').html( "left = " + Math.round(position.left) + "px; top = " + Math.round(position.top) + 'px' );
+            }, 1000);
+            setTimeout(function(){ 
+                clearInterval(refreshIntervalId);
+            }, 10000);
+            
+        };
+        // ------ END CSS { position() }
+        
+        // ------ START CSS { offset() }
+        var firstTimeSail = true;
+        var offsetBoatInitial, leftBoatInitial, topBoatInitial;
+        sailing = function(event) {
+            if (firstTimeSail === true) {
+                offsetBoatInitial = $('.boat').offset(), 
+                    leftBoatInitial = offsetBoatInitial.left, 
+                    topBoatInitial = offsetBoatInitial.top;
+                firstTimeSail = false;
+            }
+            var boatOffsetLeft = $('#boat_offset_left').val(),
+                    boatOffsetTop = $('#boat_offset_top').val(),
+                    newTop = (boatOffsetTop*topBoatInitial)/40,
+                    newLeft = (boatOffsetLeft*leftBoatInitial)/35;
+
+            $('.boat').offset({top: newTop,left: newLeft});
+            var refreshIntervalId = window.setInterval(function(){
+                var offset = $('.boat').offset();
+                $('#boat_offset_sample').html( "left = " + Math.round(offset.left) + "px; top = " + Math.round(offset.top) + 'px' );
+            }, 1000);
+            setTimeout(function(){ 
+                clearInterval(refreshIntervalId);
+            }, 10000);
+            
+        };
+        
+        changeOffsetLeft = function(element) {
+            $('#boat_offset_left_value').text($('#boat_offset_left').val());
+        };
+        
+        changeOffsetTop = function(element) {
+            $('#boat_offset_top_value').text($('#boat_offset_top').val());
+        };
+        
+        viewOffsetBoat = function(element) {
+            var refreshIntervalId = window.setInterval(function(){
+                var offset = $(element).offset();
+                $('#boat_offset_sample').html( "left = " + Math.round(offset.left) + "px; top = " + Math.round(offset.top) + 'px' );
+            }, 1000);
+            setTimeout(function(){ 
+                clearInterval(refreshIntervalId);
+            }, 10000);
+        };
+        // ------ END CSS { offset() }
+        
         // ------ START CSS { css() }
         changeCssBackground = function(element) {
             $('.car_bottom').css("background-color", $(element).val());
@@ -186,6 +299,7 @@
            });
            return false; 
         });
+        // ------ END CSS { css() }
 		
         // ------ START CSS {has / add / remove / toggleClass}
         changeHasClass = function(event) {
@@ -220,30 +334,104 @@
             //$('.tooltip').tooltip();
             
             // Slider
-//            $("#caroufredsel").carouFredSel({
-//                responsive: true,
-//                width: '100%',
-//                items: {
-//                    visible: 1,
-//                    minimum: 1
-//                },
-//                scroll: {
-//                    fx: "swing",
-//                    duration: 1000
-//                },
-//                prev: {
-//                    button: "#prev",
-//                    key: "left"
-//                },
-//                next: {
-//                    button: "#next",
-//                    key: "right"
-//                },
-//                auto: {
-//                    play: false
-//                }
-//            });
+            $("#caroufredsel").carouFredSel({
+                responsive: true,
+                width: '100%',
+                items: {
+                    visible: 1,
+                    minimum: 1
+                },
+                scroll: {
+                    fx: "swing",
+                    duration: 1000
+                },
+                prev: {
+                    button: "#prev",
+                    key: "left"
+                },
+                next: {
+                    button: "#next",
+                    key: "right"
+                },
+                auto: {
+                    play: false
+                }
+            });
         });
+        
+        (function() {
+            var
+                fullScreenApi = {
+                    supportsFullScreen: false,
+                    isFullScreen: function() { return false; },
+                    requestFullScreen: function() {},
+                    cancelFullScreen: function() {},
+                    fullScreenEventName: '',
+                    prefix: ''
+                },
+                browserPrefixes = 'webkit moz o ms khtml'.split(' ');
+
+            // check for native support
+            if (typeof document.cancelFullScreen != 'undefined') {
+                fullScreenApi.supportsFullScreen = true;
+            } else {
+                // check for fullscreen support by vendor prefix
+                for (var i = 0, il = browserPrefixes.length; i < il; i++ ) {
+                    fullScreenApi.prefix = browserPrefixes[i];
+
+                    if (typeof document[fullScreenApi.prefix + 'CancelFullScreen' ] != 'undefined' ) {
+                        fullScreenApi.supportsFullScreen = true;
+
+                        break;
+                    }
+                }
+            }
+
+            // update methods to do something useful
+            if (fullScreenApi.supportsFullScreen) {
+                fullScreenApi.fullScreenEventName = fullScreenApi.prefix + 'fullscreenchange';
+
+                fullScreenApi.isFullScreen = function() {
+                    switch (this.prefix) {
+                        case '':
+                            return document.fullScreen;
+                        case 'webkit':
+                            return document.webkitIsFullScreen;
+                        default:
+                            return document[this.prefix + 'FullScreen'];
+                    }
+                }
+                fullScreenApi.requestFullScreen = function(el) {
+                    return (this.prefix === '') ? el.requestFullScreen() : el[this.prefix + 'RequestFullScreen']();
+                }
+                fullScreenApi.cancelFullScreen = function(el) {
+                    return (this.prefix === '') ? document.cancelFullScreen() : document[this.prefix + 'CancelFullScreen']();
+                }
+            }
+
+            // jQuery plugin
+            if (typeof jQuery != 'undefined') {
+                jQuery.fn.requestFullScreen = function() {
+
+                    return this.each(function() {
+                        if (fullScreenApi.supportsFullScreen) {
+                            fullScreenApi.requestFullScreen(this);
+                        }
+                    });
+                };
+            }
+
+            // export api
+            window.fullScreenApi = fullScreenApi;
+        })();
+        
+        var fsButton = document.getElementById('header'),
+            fsElement = document.getElementById('specialstuff');
+        if (fullScreenApi.supportsFullScreen) {
+            fsButton.addEventListener('click', function() {
+                fullScreenApi.requestFullScreen(fsElement);
+            }, true);
+        }
     </script>
 <!--    <script type="text/javascript" src="js/jquery.carouFredSel-6.2.1-packed.js"></script>-->
     <script type="text/javascript" src="js/jAlert-functions.min.js"></script>
