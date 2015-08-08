@@ -2,12 +2,8 @@
 <head>
     <link rel="stylesheet" type="text/css" media="screen" href="css/jAlert-v3.css">
     <link rel="stylesheet" type="text/css" media="screen" href="css/site.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="js/jquery-tooltip/jquery.tooltip.css" />
     <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
     <link href="http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono" rel="stylesheet" type="text/css" />
-    
-    
-    <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
 </head>
 <body>
     <div id="container">
@@ -16,8 +12,7 @@
             <div id="caroufredsel">
                 <!-- SLIDE 1 -->
                 <div class="slide styling" id="welcome-slide">
-                    <h3></h3>
-                    <img src="image/firstpage.png" alt="JQuery"/>
+                    <img class="introduction-img" src="image/firstpage.png" alt="JQuery"/>
                 </div>
                 <!-- SLIDE 2 -->
                 <div class="slide styling" id="welcome-slide">
@@ -43,6 +38,7 @@
         <option value=""></option>
         <option value="minion">minion</option>
         <option value="green">green</option>
+        <option value="minion green">minion green</option>
     </select> ); removeClass( <select id="remove-class-select" onchange='changeRemoveClass(event)'>
         <option value=""></option>
         <option value="minion">minion</option>
@@ -51,9 +47,10 @@
     </select> );</b></p>
     <p class="inline"><b>toggleClass( <button data-class="minion" onclick='changeToggleClass(this)' class="minion-btn"></button> <button data-class="green" onclick='changeToggleClass(this)' class="green-btn"></button> );</b></p>
     <button href="#" 
-        data-content="$(<span class='red'>'#example'</span>).hasClass(<span class='red'>'minion'</span>)<br/><br/>
-            $(<span class='red'>'#example'</span>).addClass(<span class='red'>'minion'</span>)<br/><br/>
-            $(<span class='red'>'#example'</span>).addClass(<span class='red'>'minion'</span>)<br/><br/>" 
+            data-content="<span class='blue italic'>// check has class, return true/false</span> <br/>$(<span class='red'>'#example'</span>).hasClass(<span class='red'>'minion'</span>)<br/><br/>
+            <span class='blue italic'>// add class</span><br/>$(<span class='red'>'#example'</span>).addClass(<span class='red'>'minion'</span>)<br/>$(<span class='red'>'#example'</span>).addClass(<span class='red'>'minion green'</span>)<br/><br/>
+            <span class='blue italic'>// remove class</span><br/>$(<span class='red'>'#example'</span>).removeClass(<span class='red'>'minion'</span>)<br/>$(<span class='red'>'#example'</span>).removeClass()<br/><br/><br/>
+            <span class='blue italic'>// toggle class</span><br/>$(<span class='red'>'#example'</span>).toggleClass(<span class='red'>'minion'</span>)<br/><br/>" 
         class="modern-btn alert-button" data-show="flipInX" data-hide="flipOutX">CODE</button>
 </pre>
 <div class="example">
@@ -61,8 +58,60 @@
 </div>
                     </section>
                 </div>
-                
-
+                <!-- SLIDE 4 -->
+<div class="slide styling" id="border-image">
+                    <h1>CSS { css() }</h1>
+                    <section>
+<pre>
+    <p class="inline"><b>$(e).css('background-color') = <span id="css-background-example"></span></b></p>
+    <p class="inline"><b id="css-multiple-example">$(e).css(['width','height']) =</b></p>
+    <p class="inline"><b>$(e).css('background-color', <select id="css-background-select" onchange='changeCssBackground(this)'>
+        <option value="0.0s"></option>
+        <option value="green">green</option>
+        <option value="blue">blue</option>
+        <option value="orange">orange</option>
+    </select> ) Paint your car as you like :v</b></p>
+    <p class="inline"><b>$(e).css('animation', <select id="css-transitions-select" onchange='changeCssTransitions(this)'>
+        <option value="0.0s"></option>
+        <option value="1.0s">1.0s</option>
+        <option value="0.1s">0.1s</option>
+    </select> )</b></p>
+    <button href="#" 
+            data-content="<span class='blue italic'>// get a single css property</span> <br/>$(<span class='red'>'#example'</span>).css(<span class='red'>'background-color'</span>)<br/><br/>
+            <span class='blue italic'>// get multiple css properties</span><br/>$(<span class='red'>'#example'</span>).css([<span class='red'>'width', 'height'</span>])<br/><br/>
+            <span class='blue italic'>// set a single css property</span><br/>$(<span class='red'>'#example'</span>).css(<span class='red'>'background-color', 'red'</span>)<br/><br/>
+            <span class='blue italic'>// set multiple css properties</span><br/>
+            $(<span class='red'>'#example'</span>).css({<br/>
+            <span class='red'>
+            &nbsp;&nbsp;&nbsp;&nbsp;'WebkitAnimation': 'wheelmove 1s infinite;'<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;'MozAnimation': &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'wheelmove 1s infinite;'<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;'MsAnimation': &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'wheelmove 1s infinite;'<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;'OAnimation': &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'wheelmove 1s infinite;'<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;'animation': &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'wheelmove 1s infinite;'<br/>
+            </span>})<br/><br/>" 
+        class="modern-btn alert-button" data-show="flipInX" data-hide="flipOutX">CODE</button>
+</pre>
+<div class="example relative">
+    <div class="car">
+        <div class="car_top" onclick="viewSingleCss(this); viewMultipleCss(this);">
+            <div class="window"></div>
+            <div class="window front"></div>
+        </div> 
+        <div class="car_bottom" onclick="viewSingleCss(this); viewMultipleCss(this);"></div>
+        <div class="wheel" onclick="viewSingleCss(this); viewMultipleCss(this);">
+            <div class="wheel_cap">
+                <div class="wheel_bar"></div>
+            </div>
+        </div>
+        <div class="wheel front" onclick="viewSingleCss(this); viewMultipleCss(this);">
+            <div class="wheel_cap">
+                <div class="wheel_bar"></div>
+            </div>
+        </div>
+    </div>
+</div>
+                    </section>
+                </div>
             </div>
             <a id="prev" class="" style="display: block;"></a>
             <a id="next" class="" style="display: block;"></a>
@@ -70,7 +119,55 @@
     </div>
 
 <div id="footer">
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
     <script>     
+        // ------ START CSS { css() }
+        changeCssBackground = function(element) {
+            $('.car_bottom').css("background-color", $(element).val());
+        };
+        
+        changeCssTransitions = function(element) {
+            var time = $('#css-transitions-select').val();
+            if (time == '1.0s') {
+                timeCar = '15s';
+            } else if (time == '0.1s') {
+                timeCar = '5s';
+            } else {
+                timeCar = '0s';
+            }
+            var stylesWheel = {
+                WebkitAnimation : 'wheelmove '+ time + ' infinite',
+                MozAnimation    : 'wheelmove '+ time + ' infinite',
+                MsAnimation     : 'wheelmove '+ time + ' infinite',
+                OAnimation      : 'wheelmove '+ time + ' infinite',
+                animation       : 'wheelmove '+ time + ' infinite',
+            };
+            $('.wheel_bar').css(stylesWheel);
+            var stylesCar = {
+                WebkitAnimation : 'carmove '+ timeCar + ' infinite',
+                MozAnimation    : 'carmove '+ timeCar + ' infinite',
+                MsAnimation     : 'carmove '+ timeCar + ' infinite',
+                OAnimation      : 'carmove '+ timeCar + ' infinite',
+                animation       : 'carmove '+ timeCar + ' infinite',
+            };
+            $('.car').css(stylesCar);
+        };
+        
+        viewSingleCss = function(element) {
+            $('#css-background-example').css("background-color", $(element).css("background-color"));
+        };
+        
+        viewMultipleCss = function(element) {
+            var html = [ "$(e).css(['width','height']) = " ];
+            var styleProps = $( element ).css([
+                "width", "height"
+            ]);
+            console.log(styleProps);
+            $.each( styleProps, function( prop, value ) {
+                html.push( prop + ": " + value + "; " );
+            });
+            $('#css-multiple-example').html(html.join( "" ));
+        };
         
         $('.alert-button').on('click', function(e){
             e.preventDefault();
@@ -89,7 +186,8 @@
            });
            return false; 
         });
-			  
+		
+        // ------ START CSS {has / add / remove / toggleClass}
         changeHasClass = function(event) {
             if ($('#has-class-example').hasClass($('#has-class-select').val())) {
                 $('#hasClassResult').html('TRUE');
@@ -114,40 +212,40 @@
             $('#has-class-example').toggleClass($(element).attr("data-class"));
             changeHasClass();
         };
+        // ----- END CSS {has / add / remove / toggleClass}
         
         $(document).ready(function() {
             
-            $('.tooltip').tooltip();
+            // Tooltip
+            //$('.tooltip').tooltip();
             
-            $("#caroufredsel").carouFredSel({
-                responsive: true,
-                width: '100%',
-                items: {
-                    visible: 1,
-                    minimum: 1
-                },
-                scroll: {
-                    fx: "swing",
-                    duration: 1000
-                },
-                prev: {
-                    button: "#prev",
-                    key: "left"
-                },
-                next: {
-                    button: "#next",
-                    key: "right"
-                },
-                auto: {
-                    play: false
-                }
-            });
+            // Slider
+//            $("#caroufredsel").carouFredSel({
+//                responsive: true,
+//                width: '100%',
+//                items: {
+//                    visible: 1,
+//                    minimum: 1
+//                },
+//                scroll: {
+//                    fx: "swing",
+//                    duration: 1000
+//                },
+//                prev: {
+//                    button: "#prev",
+//                    key: "left"
+//                },
+//                next: {
+//                    button: "#next",
+//                    key: "right"
+//                },
+//                auto: {
+//                    play: false
+//                }
+//            });
         });
     </script>
-    <script type="text/javascript" src="js/jquery.carouFredSel-6.2.1-packed.jss"></script>
-    <script type="text/javascript" src="js/jquery-tooltip/lib/jquery.bgiframe.js"></script>
-    <script type="text/javascript" src="js/jquery-tooltip/lib/jquery.dimensions.js"></script>
-    <script type="text/javascript" src="js/jquery-tooltip/jquery.tooltip.js"></script>
+<!--    <script type="text/javascript" src="js/jquery.carouFredSel-6.2.1-packed.js"></script>-->
     <script type="text/javascript" src="js/jAlert-functions.min.js"></script>
     <script type="text/javascript" src="js/jAlert-v3.min.js"></script>
 </div>		

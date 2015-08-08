@@ -12,6 +12,8 @@ a {font-family: arial; font-size: 13px; color: #93B800 }
 a:hover { text-decoration: none; color: #5A4E41; }
 a:active { color: #5A4E41; }
 
+img.introduction-img { width: 900px; height: 500px; }
+
 #container { max-width:1280px;margin:0 auto;min-height: 100%;}
 #container-wrapper {overflow:auto;padding-bottom: 33px;width: 100%;}
 #container-content { padding-bottom: 20px;}
@@ -25,6 +27,8 @@ p.inline { display: inline-block; margin-bottom: 20px; }
 
 .red { color: red; }
 .blue { color: blue; }
+.italic { font-style: italic; }
+
 .modern-btn { 
     cursor: pointer; background:#5CCD00; background:-moz-linear-gradient(top,#5CCD00 0%,#4AA400 100%);
     background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#5CCD00),color-stop(100%,#4AA400));
@@ -47,7 +51,7 @@ p.inline { display: inline-block; margin-bottom: 20px; }
 #doraemon { height: 320px; }
 #doraemon iframe { width: 100%; height: 100%; border: none; }
 
-#prev, #next{ width: 68px; height: 69px; top: 60px; background: url('../image/prev-big.png') no-repeat top center; display: block; position: absolute; }
+#prev, #next{ cursor: pointer; width: 68px; height: 69px; top: 60px; background: url('../image/prev-big.png') no-repeat top center; display: block; position: absolute; }
 #prev{ left: 0; }
 #next{ background: url('../image/next-big.png') no-repeat top center; right: 0; }
 #next:hover{ background: url('../image/next-big.png') no-repeat bottom center;  }
@@ -171,6 +175,7 @@ video{-moz-border-radius:8px;-khtml-border-radius:8px;-webkit-border-radius:8px;
 .stroke{-webkit-text-stroke-color:red;-webkit-text-stroke-width:1px}
 .center{text-align:center}
 
+.relative { position: relative; }
 .example .minion { background: url('../image/minion.png') no-repeat top center; background-size: cover; }
 .example .green { background-color: rgb(99, 200, 99); }
 .example .border { -webkit-border-radius: 25px; -moz-border-radius: 25px; border-radius: 25px; }
@@ -179,3 +184,47 @@ video{-moz-border-radius:8px;-khtml-border-radius:8px;-webkit-border-radius:8px;
 .minion-btn, .green-btn { vertical-align: bottom; width: 40px; height: 40px; cursor: pointer; outline: none; border: none; }
 .minion-btn { background: url(../image/minion-icon.png) center no-repeat; background-size: cover; }
 .green-btn { background-color: rgb(99, 200, 99); border-radius: 50%; -webkit-border-radius: 50%; -moz-border-radius: 50%; }
+
+.car{ width:360px; height:140px; top:30px; position:absolute; left:20px; cursor: pointer; }
+.wheel{ background:#000; border-radius:36px; width:65px; height:65px; left: 56px; position: absolute; top: 65px; border:5px solid #fff;}
+.wheel_cap{ background:#FFF; border-radius:32px; margin:15%; height:70%; width:70%; position:relative;}
+.wheel_bar{ height:5px; background:#000; position:absolute; top:20px; width:100%;}
+.wheel.front{left: 260px;}
+.car_top{ width:50%; height:40px; background:#F00; border-radius: 29px 50px 0 0; left: 58px; position: absolute; width: 60%;}
+.car_bottom{ width:10%; height:70px; background:#FF0; border-radius: 62px 55px 0 0; top:40px; left: 0; position: absolute; width: 100%;}
+.window{ width:35%; background:#000; opacity:0.5; height:28px; position:absolute; top:12px; left:20px; border-radius: 10px 12px 0 0; border:2px solid #fff;}
+.window.front{ border-radius: 10px 30px 0 0; left: 125px; width: 35%;}
+ 
+@keyframes wheelmove {
+    0%  {transform:rotate(0deg);}
+    15% {transform:rotate(30deg);}
+    35% {transform:rotate(60deg);}
+    50% {transform:rotate(90deg);}
+    65% {transform:rotate(120deg);}
+    80% {transform:rotate(150deg);}	
+    100%{transform:rotate(180deg);}
+}
+
+@-webkit-keyframes wheelmove {
+    0%  {-webkit-transform:rotate(0deg);}
+    15% {-webkit-transform:rotate(30deg);}
+    35% {-webkit-transform:rotate(60deg);}
+    50% {-webkit-transform:rotate(90deg);}
+    65% {-webkit-transform:rotate(120deg);}
+    80% {-webkit-transform:rotate(150deg);}	
+    100%{-webkit-transform:rotate(180deg);}
+}
+
+@keyframes carmove
+{
+    0%  {left:-20%;}
+    100% {left:100%;}
+}
+@-webkit-keyframes carmove
+{
+    0%  {left:-20%;}
+    100% {left:100%;}
+}
+
+
+#css-background-example { width: 50px; height: 30px; border: 1px solid black; display: inline-block; }
