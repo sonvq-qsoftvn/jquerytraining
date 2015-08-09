@@ -25,6 +25,20 @@
                     </section> 
                 </div>
                 <!-- SLIDE 3 -->
+                <div class="slide styling" id="welcome-slide">
+                    <h3>CSS Category</h3>
+                    <section>
+<pre>    
+    <b>1) hasClass, addClass, removeClass, toggleClass</b><br>
+    <b>2) css</b><br>
+    <b>3) offset</b><br>
+    <b>4) position</b><br>
+    <b>5) scrollTop, scrollLeft</b><br>
+    <b>6) height, innerHeight, outerHeight</b><br>
+</pre>
+                    </section> 
+                </div>
+                <!-- SLIDE 4 -->
                 <div class="slide styling" id="border-image">
                     <h1>CSS {has / add / remove / toggleClass}</h1>
                     <section>
@@ -48,7 +62,7 @@
     <button href="#" 
             data-content="<span class='blue italic'>// check has class, return true/false</span> <br/>$(<span class='red'>'#example'</span>).hasClass(<span class='red'>'minion'</span>)<br/><br/>
             <span class='blue italic'>// add class</span><br/>$(<span class='red'>'#example'</span>).addClass(<span class='red'>'minion'</span>)<br/>$(<span class='red'>'#example'</span>).addClass(<span class='red'>'minion green'</span>)<br/><br/>
-            <span class='blue italic'>// remove class</span><br/>$(<span class='red'>'#example'</span>).removeClass(<span class='red'>'minion'</span>)<br/>$(<span class='red'>'#example'</span>).removeClass()<br/><br/><br/>
+            <span class='blue italic'>// remove class</span><br/>$(<span class='red'>'#example'</span>).removeClass(<span class='red'>'minion'</span>)<br/>$(<span class='red'>'#example'</span>).removeClass()<br/><br/>
             <span class='blue italic'>// toggle class</span><br/>$(<span class='red'>'#example'</span>).toggleClass(<span class='red'>'minion'</span>)<br/><br/>" 
         class="modern-btn alert-button" data-show="flipInX" data-hide="flipOutX">CODE</button>
 </pre>
@@ -57,7 +71,7 @@
 </div>
                     </section>
                 </div>
-                <!-- SLIDE 4 -->
+                <!-- SLIDE 5 -->
                 <div class="slide styling" id="border-image">
                     <h1>CSS { css() }</h1>
                     <section>
@@ -111,13 +125,13 @@
 </div>
                     </section>
                 </div>
-                <!-- SLIDE 5 -->
+                <!-- SLIDE 6 -->
                 <div class="slide styling" id="border-image">
                     <h1>CSS { offset() }</h1>
                     <section>
 <pre>
-<p class="inline"><b>$('.boat').offset() => <span id="boat_offset_sample"></span></b></p>
-<p class="inline"><b>offset({left: <span id="boat_offset_left_value">35</span>% <input onchange="changeOffsetLeft(this)" id="boat_offset_left" type="range" min="5" max="75" value="35" />, top: <span id="boat_offset_top_value">40</span>% <input onchange="changeOffsetTop(this)" id="boat_offset_top" type="range" min="35" max="45" value="40" />})</b> <button class="round-btn" onclick="sailing(event)">Go</button></p>
+<b>$('.boat').offset() => <span id="boat_offset_sample"></span></b>
+<b>offset({left: <span id="boat_offset_left_value">35</span>% <input onchange="changeOffsetLeft(this)" id="boat_offset_left" type="range" min="5" max="75" value="35" />, top: <span id="boat_offset_top_value">40</span>% <input onchange="changeOffsetTop(this)" id="boat_offset_top" type="range" min="35" max="45" value="40" />})</b> <button class="round-btn" onclick="sailing(event)">Go</button>
 <button href="#" 
         data-content="<span class='blue italic'>// get offset of element</span> <br/><span class='violet'>var</span> offset = $(<span class='red'>'#example'</span>).offset()<br/><span class='violet'>var</span> leftOffset = offset.<span class='violet'>left</span><br/><span class='violet'>var</span> topOffset = offset.<span class='violet'>top</span><br/><br/>
         <span class='blue italic'>// set offset to an element</span><br/>$(<span class='red'>'#example'</span>).offset({ <span class='red'>top: </span>100, <span class='red'>left: </span>200 })<br/><br/>" 
@@ -131,13 +145,13 @@
 </div>
                     </section>
                 </div>
-                <!-- SLIDE 6 -->
+                <!-- SLIDE 7 -->
                 <div class="slide styling" id="border-image">
                     <h1>CSS { position() }</h1>
                     <section>
 <pre>
-<p class="inline"><b>$('.frog').position() => <span id="frog_position_sample"></span></b></p>
-<p class="inline"><b>css({left: <span id="frog_position_left_value">35</span>px <input onchange="changePositionLeft(this)" id="frog_position_left" type="range" min="5" max="700" value="35" />, top: <span id="frog_position_top_value">40</span>px <input onchange="changePositionTop(this)" id="frog_position_top" type="range" min="25" max="220" value="40" />})</b> <button class="round-btn" onclick="swimming(event)">Go</button></p>
+<b>$('.frog').position() => <span id="frog_position_sample"></span></b>
+<b>css({left: <span id="frog_position_left_value">110</span>px <input onchange="changePositionLeft(this)" id="frog_position_left" type="range" min="5" max="700" value="110" />, top: <span id="frog_position_top_value">177</span>px <input onchange="changePositionTop(this)" id="frog_position_top" type="range" min="25" max="220" value="177" />})</b> <button class="round-btn" onclick="swimming(event)">Go</button>
 <button href="#" 
         data-content="<span class='blue italic'>// get position of element</span> <br/><span class='violet'>var</span> position = $(<span class='red'>'#example'</span>).position()<br/><span class='violet'>var</span> leftPosition = position.<span class='violet'>left</span><br/><span class='violet'>var</span> topPosition = position.<span class='violet'>top</span><br/><br/>"
     class="modern-btn alert-button" data-show="fadeInDown" data-hide="fadeOutUp">CODE</button>
@@ -146,6 +160,62 @@
 	<img class="mike" src="image/mike.png" onclick="viewPositionFrog(this);">
 </div>
                     </section>
+                </div>
+                <!-- SLIDE 8 -->
+                <div class="slide styling" id="border-image">
+                    <h1>CSS { scrollTop(), scrollLeft() }</h1>
+                    <section>
+<pre>
+<p class="inline"><b>$(e).scrollTop()  = <span id="island_scroll_top_sample"></span></b></p>
+<p class="inline"><b>$(e).scrollLeft() = <span id="island_scroll_left_sample"></span></b></p>
+<p class="inline"><b>scrollTop(<span id="island_scroll_top_value">0</span>px <input onchange="changeScrollTopIsland(event)" id="island_scroll_top" type="range" min="0" max="471" value="0" />); scrollLeft(<span id="island_scroll_left_value">0</span>px <input onchange="changeScrollLeftIsland(event)" id="island_scroll_left" type="range" min="0" max="572" value="0" />)</b></p>
+<button href="#" 
+        data-content="<span class='blue italic'>// get scrollTop of element<br/>// = 0 if scroll at top or not scrollable</span> <br/>$(<span class='red'>'#example'</span>).scrollTop()<br/><br/>
+        <span class='blue italic'>// set scrollTop of element, example 200px</span> <br/>$(<span class='red'>'#example'</span>).scrollTop(200)<br/><br/>"
+    class="modern-btn alert-button" data-show="bounceIn" data-hide="bounceOut">CODE</button>
+</pre>
+<div class="island-example">
+    <div class="big-island"></div>
+</div>
+                    </section>
+                </div>
+                <!-- SLIDE 9 -->
+                <div class="slide styling" id="border-image">
+                    <h1>CSS { height, innerHeight, outerHeight() }</h1>
+                    <section>
+<pre>
+<p class="inline"><b>.height() = <span id="button_height_css"></span><input onchange="changeButtonHeightScroll(event)" id="button_height_scroll" type="range" min="0" max="200" value="0" />; .innerHeight() = <span id="button_innerheight_css"></span></b></p>
+<p class="inline"><b>.outerHeight() = <span id="button_outer_height_false_css"></span>; .outerHeight(true) = <span id="button_outer_height_true_css"></span></b></p>
+<button href="#" 
+        data-content="<span class='blue italic'>// get height, innerHeight, outerHeight</span> <br/>$(<span class='red'>'#example'</span>).height()<br/>
+        $(<span class='red'>'#example'</span>).innerHeight()<br/>
+        $(<span class='red'>'#example'</span>).outerHeight()<br/>
+        $(<span class='red'>'#example'</span>).outerHeight(true)<br/><br/>
+        <span class='blue italic'>// set height of element, example 200px</span> <br/>$(<span class='red'>'#example'</span>).height(200)<br/><br/>"
+    class="modern-btn alert-button inline" data-show="flipInX" data-hide="flipOutX">CODE</button>
+<button href="#" 
+        data-content="<img class='height-img-explain' src='image/height.png' /><img class='height-img-explain' src='image/innerHeight.png' /><img class='height-img-explain' src='image/outerHeight.png' />"
+    class="modern-btn alert-button inline" data-show="flipInX" data-hide="flipOutX" data-size="xlg">MORE</button>
+</pre>
+<div class="example no-padding relative">
+    <a id="bubble_button" class="button orange big margin-20 overflow-hidden" onclick="checkSizeHeightButton(this)">Bubble Button</a>
+    <div>
+    <ul class="ruler" data-items="10"></ul>
+</div>
+</div>
+                    </section>
+                </div>
+                <!-- SLIDE 10 -->
+                <div class="slide styling" id="welcome-slide">
+                    <h3>Attributes Category</h3>
+                    <section>
+<pre>    
+    <b>1) attr, removeAttr</b><br>
+    <b>2) prop, removeProp</b><br>
+    <b>3) html</b><br>
+    <b>4) var</b><br>
+</pre>
+                    </section> 
                 </div>
             </div>
             <a id="prev" class="" style="display: block;"></a>
@@ -156,6 +226,70 @@
 <div id="footer">
     <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
     <script> 
+        // ------ START CSS { height, innerHeight, outerHeight() }
+        changeButtonHeightScroll = function(element) {
+            $("#bubble_button").height($("#button_height_scroll").val());
+            var refreshIntervalId = window.setInterval(function(){
+                $("#button_height_css").html($("#bubble_button").height());
+                $("#button_innerheight_css").html($("#bubble_button").innerHeight());
+                $("#button_outer_height_false_css").html($("#bubble_button").outerHeight());
+                $("#button_outer_height_true_css").html($("#bubble_button").outerHeight(true));
+            }, 200);
+            setTimeout(function(){ 
+                clearInterval(refreshIntervalId);
+            }, 400);
+        };       
+        
+        checkSizeHeightButton = function(element) {
+            $("#button_height_css").html($("#bubble_button").height());
+            $("#button_innerheight_css").html($("#bubble_button").innerHeight());
+            $("#button_outer_height_false_css").html($("#bubble_button").outerHeight());
+            $("#button_outer_height_true_css").html($("#bubble_button").outerHeight(true));
+            
+            $("#button_height_scroll").val($("#bubble_button").height());
+        };
+        // ------ START CSS { height, innerHeight, outerHeight() }
+        
+        // ------ START CSS { scrollTop() }
+        changeScrollTopIsland = function(element) {
+            $("#island_scroll_top_value").html($("#island_scroll_top").val());
+            $(".island-example").scrollTop($("#island_scroll_top").val());
+            var refreshIntervalId = window.setInterval(function(){
+                $("#island_scroll_top_sample").html($('.island-example').scrollTop());
+            }, 1000);
+            setTimeout(function(){ 
+                clearInterval(refreshIntervalId);
+            }, 3000);
+        };
+        changeScrollLeftIsland = function(element) {
+            $("#island_scroll_left_value").html($("#island_scroll_left").val());
+            $(".island-example").scrollLeft($("#island_scroll_left").val());
+            var refreshIntervalId = window.setInterval(function(){
+                $("#island_scroll_left_sample").html($('.island-example').scrollLeft());
+            }, 1000);
+            setTimeout(function(){ 
+                clearInterval(refreshIntervalId);
+            }, 2000);
+        };
+        $( ".island-example" ).scroll(function() {
+            var refreshIntervalId = window.setInterval(function(){
+                var scrollTop = $('.island-example').scrollTop();
+                var scrollLeft = $('.island-example').scrollLeft();
+                
+                $("#island_scroll_top_sample").html(scrollTop);
+                $("#island_scroll_top").val(scrollTop);
+                $("#island_scroll_top_value").html(scrollTop);
+                
+                $("#island_scroll_left_sample").html(scrollLeft);        
+                $("#island_scroll_left").val(scrollLeft);
+                $("#island_scroll_left_value").html(scrollLeft);
+            }, 200);
+            setTimeout(function(){ 
+                clearInterval(refreshIntervalId);
+            }, 400);
+        });
+        // ------ END CSS { scrollTop() }
+        
         // ------ START CSS { position() }
         viewPositionFrog = function(element) {
             var refreshIntervalId = window.setInterval(function(){
@@ -287,7 +421,11 @@
             var btn = $(this),
             show = btn.data('show'),
             hide = btn.data('hide'),
-            content = btn.data('content');
+            content = btn.data('content')
+            size = btn.data('size');
+            if ((typeof size == 'undefined') || (size == null)) {
+                size = 'md';
+            }
            $.jAlert({
                 'title': 'Code use in this page',
                 'theme': 'green',
@@ -295,7 +433,7 @@
                 'showAnimation': show,
                 'hideAnimation': hide,
                 'closeOnClick': false,
-                'size': 'md'
+                'size': size
            });
            return false; 
         });
@@ -329,6 +467,17 @@
         // ----- END CSS {has / add / remove / toggleClass}
         
         $(document).ready(function() {
+            
+            // Build "dynamic" rulers by adding items
+            $(".ruler[data-items]").each(function() {
+                var ruler = $(this).empty(),
+                    len = Number(ruler.attr("data-items")) || 0,
+                    item = $(document.createElement("li")),
+                    i;
+                for (i = 0; i < len; i++) {
+                    ruler.append(item.clone().text(i + 1));
+                }
+            });
             
             // Tooltip
             //$('.tooltip').tooltip();
@@ -433,7 +582,7 @@
             }, true);
         }
     </script>
-<!--    <script type="text/javascript" src="js/jquery.carouFredSel-6.2.1-packed.js"></script>-->
+    <script type="text/javascript" src="js/jquery.carouFredSel-6.2.1-packed.js"></script>
     <script type="text/javascript" src="js/jAlert-functions.min.js"></script>
     <script type="text/javascript" src="js/jAlert-v3.min.js"></script>
 </div>		

@@ -5,3 +5,12 @@ https://www.google.com/trends/explore#q=dojo+javascript,jquery+javascript,yui+ja
 http://blog.teamtreehouse.com/using-jquery-to-detect-when-css3-animations-and-transitions-end
 
 http://stackoverflow.com/questions/9255279/callback-when-css3-transition-finishes
+
+// pinocchio 
+http://codepen.io/Guilh/pen/rcAdu
+
+// animal
+http://codepen.io/ashleynolan/pen/fkazq?editors=110
+
+// doraemon
+http://purecss3.net/doraemon/doraemon_css3.html
