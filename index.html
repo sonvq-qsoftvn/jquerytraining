@@ -1,6 +1,7 @@
 <html id="specialstuff">
 <head>
-    <link rel="stylesheet" type="text/css" media="screen" href="css/jAlert-v3.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/jAlert-v3.css">    
+    <link rel="stylesheet" type="text/css" media="screen" href="css/jquery-ui.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="css/site.css">
     <link href="http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono" rel="stylesheet" type="text/css" />
 </head>
@@ -210,31 +211,31 @@
                     <h3>Attributes Category</h3>
                     <section>
 <pre>    
-    <b>1) attr, prop</b><br>
-    <b>2) removeAttr, removeProp</b><br>
-    <b>3) html</b><br>
-    <b>4) var</b><br>
+    <b>1) attr, removeAttr, prop, removeProp</b><br>
+    <b>2) html</b><br>
+    <b>3) var</b><br   
 </pre>
                     </section> 
                 </div>
                 <!-- SLIDE 11 -->
                 <div class="slide styling" id="border-image">
-                    <h1>CSS { attr, prop }</h1>
+                    <h1>CSS { attr, removeAttr, prop, removeProp }</h1>
                     <section>
 <pre>
-<p class="inline"><b>.attr('checked') = <span id="span_attr_checked_value"></span>       .attr('value') = <span id="span_attr_name_value"></span></b></p>
-<p class="inline"><b>.prop('checked') = <span id="span_prop_checked_value"></span>         .prop('value') = <span id="span_prop_name_value"></span></b></p>
+<p class="inline"><b>.attr('checked') = <span id="span_attr_checked_value"></span>      .attr('value') = <span id="span_attr_name_value"></span></b></p>
+<p class="inline"><b>.prop('checked') = <span id="span_prop_checked_value"></span>        .prop('value') = <span id="span_prop_name_value"></span></b></p>
 <p class="inline"><b>.prop('checked', <select id="set-prop-checkbox" onchange='changePropCheckbox(this)'>
         <option value="none"></option>
         <option value="true">true</option>
         <option value="false">false</option>
-    </select> )</b></p>
+    </select> )      .removeProp('<input class="small-input" id="textbox_remove_prop" type="text" onblur='removePropValue()'/>')</b></p>
+<p class="inline"><b>.attr(<input class="small-input" id="textbox_change_attr" type="text" />, <input onblur="setAttrCheckbox()" class="small-input" id="textbox_change_attr_value" type="text" />)   .removeAttr('<input class="small-input" id="textbox_remove_attr" type="text" onblur='removeAttrValue()'/>')</b></p>
 </pre>
 <div class="example relative text-left example-attr">
     <div class="left-container">
         <span class="red">&#x3C;input</span> type=&#x22;<span class="blue">checkbox</span>&#x22; checked=&#x22;<span class="blue">checked</span>&#x22;&#x3E;
         <div class="switch">
-            <input type="checkbox" class="control" checked="checked" id="checkbox_for_attr_prop">
+            <input title="" type="checkbox" class="tooltip control" checked="checked" id="checkbox_for_attr_prop">
             <label for="control" class="checkbox"></label>
         </div>
     </div>
@@ -266,13 +267,23 @@
 <!--    <script type="text/javascript" src="js/jquery.nicescroll.min.js"></script>-->
     <script> 
         // ------ START CSS { attr, prop }
+        removeAttrValue = function() {
+            $('#input-check-attr-prop').removeAttr($('#textbox_remove_attr').val()); 
+        };    
+        removePropValue = function() {
+            $('#input-check-attr-prop').removeProp($('#textbox_remove_prop').val()); 
+        };    
+        setAttrCheckbox = function(element) {
+            var key = $('#textbox_change_attr').val();
+            var value = $('#textbox_change_attr_value').val();
+            $('#checkbox_for_attr_prop').attr(key, value);
+        };    
         changePropCheckbox = function(element) {
             if ($('#set-prop-checkbox').val() == "true" || $('#set-prop-checkbox').val() == true) {
                 $('#checkbox_for_attr_prop').prop('checked', true);
             } else if ($('#set-prop-checkbox').val() == "false" || $('#set-prop-checkbox').val() == false){
                 $('#checkbox_for_attr_prop').prop('checked', false);
             }
-            
         };    
         
         checkAttrPropCheckbox = function() {
@@ -549,7 +560,20 @@
             });
             
             // Tooltip
-            //$('.tooltip').tooltip();
+            $('.tooltip').tooltip({
+      position: {
+        my: "center bottom-20",
+        at: "center top",
+        using: function( position, feedback ) {
+          $( this ).css( position );
+          $( "<div>" )
+            .addClass( "arrow" )
+            .addClass( feedback.vertical )
+            .addClass( feedback.horizontal )
+            .appendTo( this );
+        }
+      }
+    });
             
             // Slider
             $("#caroufredsel").carouFredSel({
@@ -689,6 +713,7 @@
 <!--    <script type="text/javascript" src="js/jquery.carouFredSel-6.2.1-packed.js"></script>-->
     <script type="text/javascript" src="js/jAlert-functions.min.js"></script>
     <script type="text/javascript" src="js/jAlert-v3.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
 </div>		
 </body>
 
