@@ -210,12 +210,49 @@
                     <h3>Attributes Category</h3>
                     <section>
 <pre>    
-    <b>1) attr, removeAttr</b><br>
-    <b>2) prop, removeProp</b><br>
+    <b>1) attr, prop</b><br>
+    <b>2) removeAttr, removeProp</b><br>
     <b>3) html</b><br>
     <b>4) var</b><br>
 </pre>
                     </section> 
+                </div>
+                <!-- SLIDE 11 -->
+                <div class="slide styling" id="border-image">
+                    <h1>CSS { attr, prop }</h1>
+                    <section>
+<pre>
+<p class="inline"><b>.attr('checked') = <span id="span_attr_checked_value"></span>       .attr('value') = <span id="span_attr_name_value"></span></b></p>
+<p class="inline"><b>.prop('checked') = <span id="span_prop_checked_value"></span>         .prop('value') = <span id="span_prop_name_value"></span></b></p>
+<p class="inline"><b>.prop('checked', <select id="set-prop-checkbox" onchange='changePropCheckbox(this)'>
+        <option value="none"></option>
+        <option value="true">true</option>
+        <option value="false">false</option>
+    </select> )</b></p>
+</pre>
+<div class="example relative text-left example-attr">
+    <div class="left-container">
+        <span class="red">&#x3C;input</span> type=&#x22;<span class="blue">checkbox</span>&#x22; checked=&#x22;<span class="blue">checked</span>&#x22;&#x3E;
+        <div class="switch">
+            <input type="checkbox" class="control" checked="checked" id="checkbox_for_attr_prop">
+            <label for="control" class="checkbox"></label>
+        </div>
+    </div>
+    <div class="right-container">
+        <span class="red">&#x3C;input</span> type=&#x22;<span class="blue">text</span>&#x22; value=&#x22;<span class="blue">Name</span>&#x22; <span class="red">&#x3E;</span> <br/>
+        <span class="input input--shoko">
+            <input class="input__field input__field--shoko" type="text" id="input-check-attr-prop" value="Name" onkeyup="checkAttrPropInput()">
+            <label class="input__label input__label--shoko" for="input-check-attr-prop">
+                <span class="input__label-content input__label-content--shoko">Your Name</span>
+            </label>
+            <svg class="graphic graphic--shoko" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"></path>
+                <path d="M0,2.5c0,0,298.666,0,399.333,0C448.336,2.5,513.994,13,597,13c77.327,0,135-10.5,200.999-10.5c95.996,0,402.001,0,402.001,0"></path>
+            </svg>
+        </span>
+    </div>
+</div>
+                    </section>
                 </div>
             </div>
             <a id="prev" class="" style="display: block;"></a>
@@ -225,7 +262,38 @@
 
 <div id="footer">
     <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="js/classie.js"></script>
+<!--    <script type="text/javascript" src="js/jquery.nicescroll.min.js"></script>-->
     <script> 
+        // ------ START CSS { attr, prop }
+        changePropCheckbox = function(element) {
+            if ($('#set-prop-checkbox').val() == "true" || $('#set-prop-checkbox').val() == true) {
+                $('#checkbox_for_attr_prop').prop('checked', true);
+            } else if ($('#set-prop-checkbox').val() == "false" || $('#set-prop-checkbox').val() == false){
+                $('#checkbox_for_attr_prop').prop('checked', false);
+            }
+            
+        };    
+        
+        checkAttrPropCheckbox = function() {
+            $('#span_attr_checked_value').html($('#checkbox_for_attr_prop').attr("checked"));
+            if ($('#checkbox_for_attr_prop').prop("checked") == true) {
+                $('#span_prop_checked_value').html('' + $('#checkbox_for_attr_prop').prop("checked") + ' ');
+            } else {
+                $('#span_prop_checked_value').html('' + $('#checkbox_for_attr_prop').prop("checked") + '');
+            }
+        };    
+        $('#checkbox_for_attr_prop').change(function () {
+            checkAttrPropCheckbox();
+        });
+        checkAttrPropInput = function() {
+            $('#span_attr_name_value').html($('#input-check-attr-prop').attr('value'));
+            $('#span_prop_name_value').html($('#input-check-attr-prop').prop('value'));
+        };       
+        checkAttrPropInput();
+        checkAttrPropCheckbox();
+        // ------ START CSS { attr, prop }
+        
         // ------ START CSS { height, innerHeight, outerHeight() }
         changeButtonHeightScroll = function(element) {
             $("#bubble_button").height($("#button_height_scroll").val());
@@ -467,6 +535,7 @@
         // ----- END CSS {has / add / remove / toggleClass}
         
         $(document).ready(function() {
+//            $("html").niceScroll();
             
             // Build "dynamic" rulers by adding items
             $(".ruler[data-items]").each(function() {
@@ -582,7 +651,42 @@
             }, true);
         }
     </script>
-    <script type="text/javascript" src="js/jquery.carouFredSel-6.2.1-packed.js"></script>
+    <script>
+        (function() {
+            // trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+            if (!String.prototype.trim) {
+                (function() {
+                    // Make sure we trim BOM and NBSP
+                    var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+                    String.prototype.trim = function() {
+                        return this.replace(rtrim, '');
+                    };
+                })();
+            }
+
+            [].slice.call( document.querySelectorAll( 'input.input__field' ) ).forEach( function( inputEl ) {
+                // in case the input is already filled..
+                if( inputEl.value.trim() !== '' ) {
+                    classie.add( inputEl.parentNode, 'input--filled' );
+                }
+
+                // events:
+                inputEl.addEventListener( 'focus', onInputFocus );
+                inputEl.addEventListener( 'blur', onInputBlur );
+            } );
+
+            function onInputFocus( ev ) {
+                classie.add( ev.target.parentNode, 'input--filled' );
+            }
+
+            function onInputBlur( ev ) {
+                if( ev.target.value.trim() === '' ) {
+                    classie.remove( ev.target.parentNode, 'input--filled' );
+                }
+            }
+        })();
+    </script>
+<!--    <script type="text/javascript" src="js/jquery.carouFredSel-6.2.1-packed.js"></script>-->
     <script type="text/javascript" src="js/jAlert-functions.min.js"></script>
     <script type="text/javascript" src="js/jAlert-v3.min.js"></script>
 </div>		
