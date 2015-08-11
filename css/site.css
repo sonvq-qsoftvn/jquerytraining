@@ -28,6 +28,7 @@ p.inline { display: inline-block; margin-bottom: 20px; }
 .red { color: red; }
 .blue { color: blue; }
 .orange { color: orange; }
+.green { color: green; }
 .pink { color: pink; }
 .violet { color: rgb(255, 2, 213); }
 .italic { font-style: italic; }
@@ -604,3 +605,7 @@ video{-moz-border-radius:8px;-khtml-border-radius:8px;-webkit-border-radius:8px;
     font-size: 26px;
     font-weight: bold;
 }
+
+.clear-both { clear: both; }
+
+.code-for-checkbox { margin-top: 148px; }

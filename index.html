@@ -212,8 +212,7 @@
                     <section>
 <pre>    
     <b>1) attr, removeAttr, prop, removeProp</b><br>
-    <b>2) html</b><br>
-    <b>3) var</b><br   
+    <b>2) html, var</b><br>
 </pre>
                     </section> 
                 </div>
@@ -238,6 +237,19 @@
             <input title="" type="checkbox" class="tooltip control" checked="checked" id="checkbox_for_attr_prop">
             <label for="control" class="checkbox"></label>
         </div>
+        <div class="clear-both"></div>
+        <button href="#" 
+            data-content="<span class='blue italic'>// get attr, prop of element</span> <br/>$(<span class='red'>'#example'</span>).attr('checked')<br/>
+            $(<span class='red'>'#example'</span>).prop('checked')<br/><br/>
+            <span class='blue italic'>// set attr, prop of element</span> <br/>
+            $(<span class='red'>'#example'</span>).attr('title', 'my title')<br/>
+            $(<span class='red'>'#example'</span>).attr({<span class='green'>title</span> : 'my title', <span class='green'>alt</span> : 'my alt'})<br/><br/>
+            $(<span class='red'>'#example'</span>).prop('checked', true)<br/>
+            $(<span class='red'>'#example'</span>).prop({<span class='green'>checked</span> : true, <span class='green'>disabled</span> : true})<br/><br/>
+            <span class='blue italic'>// remove attr, prop, cannot remove multiple at once</span> <br/>
+            $(<span class='red'>'#example'</span>).removeAttr('class')<br/>
+            $(<span class='red'>'#example'</span>).removeProp('value')<br/><br/>"
+        class="modern-btn alert-button inline code-for-checkbox" data-size="lg" data-show="flipInX" data-hide="flipOutX">CODE</button>
     </div>
     <div class="right-container">
         <span class="red">&#x3C;input</span> type=&#x22;<span class="blue">text</span>&#x22; value=&#x22;<span class="blue">Name</span>&#x22; <span class="red">&#x3E;</span> <br/>
@@ -251,6 +263,10 @@
                 <path d="M0,2.5c0,0,298.666,0,399.333,0C448.336,2.5,513.994,13,597,13c77.327,0,135-10.5,200.999-10.5c95.996,0,402.001,0,402.001,0"></path>
             </svg>
         </span>
+        <div class="clear-both"></div>
+        <button href="#" 
+                data-content="The value <span class='blue'><strong>attribute</strong></span> contains the <span class='red'><strong>initial</strong></span> text content of the value attribute from the HTML source code<br/><br/>The value <span class='blue'><strong>property</strong></span> reflects the <span class='red'><strong>current</strong></span> text content inside the input box <br/><br/>"
+        class="modern-btn alert-button inline" data-show="flipInX" data-hide="flipOutX" data-size="lg">CODE</button>
     </div>
 </div>
                     </section>
