@@ -14,3 +14,5 @@ http://codepen.io/ashleynolan/pen/fkazq?editors=110
 
 // doraemon
 http://purecss3.net/doraemon/doraemon_css3.html
+
+http://codepen.io/Quinn1011/pen/gbQjYE

@@ -212,13 +212,13 @@
                     <section>
 <pre>    
     <b>1) attr, removeAttr, prop, removeProp</b><br>
-    <b>2) html, var</b><br>
+    <b>2) html, val</b><br>
 </pre>
                     </section> 
                 </div>
                 <!-- SLIDE 11 -->
                 <div class="slide styling" id="border-image">
-                    <h1>CSS { attr, removeAttr, prop, removeProp }</h1>
+                    <h1>Attributes { attr, removeAttr, prop, removeProp }</h1>
                     <section>
 <pre>
 <p class="inline"><b>.attr('checked') = <span id="span_attr_checked_value"></span>      .attr('value') = <span id="span_attr_name_value"></span></b></p>
@@ -273,7 +273,7 @@
                 </div>
                 <!-- SLIDE 12 -->
                 <div class="slide styling" id="border-image">
-                    <h1>CSS { html, val }</h1>
+                    <h1>Attributes { html, val }</h1>
                     <section>
 <pre>
         <button href="#" 
@@ -298,7 +298,7 @@
     <div id="div_contain_name" class="dog-tag-name" onclick="showHtmlOnInput()"><p id="dog"></p></div>
 </div>
                 </div>
-                <!-- SLIDE 3 -->
+                <!-- SLIDE 13 -->
                 <div class="slide styling" id="welcome-slide">
                     <h3>Manipulation Category</h3>
                     <section>
@@ -312,6 +312,77 @@
 </pre>
                     </section> 
                 </div>
+                <!-- SLIDE 14 -->
+                <div class="slide styling" id="border-image">
+                    <h1>Manipulation<br/>{ append, appendTo, pretend, pretendTo }</h1>
+                    <section>
+<pre>
+<p class="inline margin-top-10"><b>.append('&lt;div class=&quot;body-man&quot;&gt;&lt;/div&gt;')<a class="display-inline button orange small margin-20 overflow-hidden" onclick="addNewRunner()">Add Runner  </a></b></p>
+<p class="inline margin-top-10"><b>.appendTo('&lt;div class=&quot;road&quot;&gt;&lt;/div&gt;')  <a class="display-inline button orange small margin-20 overflow-hidden" onclick="moveToLine()">Move To Line</a></b></p>
+</pre>
+<div id="initial-man-block">
+    <div class="body-man">
+        <div class="head-man"></div>
+        <div class="arm-man right-man">
+            <div class="forearm-man right-man"> </div>
+        </div>
+        <div class="arm-man left-man">
+            <div class="forearm-man left-man"> </div>
+        </div>
+        <div class="leg-man right-man">
+            <div class="underleg-man right-man"> </div>
+        </div>
+        <div class="leg-man left-man">
+            <div class="underleg-man left-man"> </div>
+        </div>
+    </div>
+</div>
+<div class="example relative no-padding append-example">  
+    <div class="body-example" id="body_man_container">
+        <div class="body-man">
+            <div class="head-man"></div>
+            <div class="arm-man right-man">
+                <div class="forearm-man right-man"> </div>
+            </div>
+            <div class="arm-man left-man">
+                <div class="forearm-man left-man"> </div>
+            </div>
+            <div class="leg-man right-man">
+                <div class="underleg-man right-man"> </div>
+            </div>
+            <div class="leg-man left-man">
+                <div class="underleg-man left-man"> </div>
+            </div>
+        </div>
+    </div>
+    <div class="side_bg">
+        <div class="side_bg_black"></div>
+        <div class="side_bg_black"></div>
+        <div class="side_bg_black"></div>
+        <div class="side_bg_black"></div>
+        <div class="side_bg_black"></div>
+        <div class="side_bg_black"></div>
+        <div class="side_bg_black"></div>
+        <div class="side_bg_black"></div>
+        <div class="side_bg_black"></div>
+        <div class="side_bg_black"></div>
+    </div>
+    <div class="side_bg bot">
+        <div class="side_bg_black"></div>
+        <div class="side_bg_black"></div>
+        <div class="side_bg_black"></div>
+        <div class="side_bg_black"></div>
+        <div class="side_bg_black"></div>
+        <div class="side_bg_black"></div>
+        <div class="side_bg_black"></div>
+        <div class="side_bg_black"></div>
+        <div class="side_bg_black"></div>
+        <div class="side_bg_black"></div>
+    </div>
+    <div class="road body-example" id="road_man_container">
+        <div class="divider"></div>       
+    </div> 
+</div>
                     </section>
                 </div>
             </div>
@@ -325,16 +396,28 @@
     <script type="text/javascript" src="js/classie.js"></script>
 <!--    <script type="text/javascript" src="js/jquery.nicescroll.min.js"></script>-->
     <script> 
-        // ------ START CSS { html, var }
+         // ------ START Manipulation { append, appendTo, pretend, pretendTo }
+         moveToLine = function() {
+            var allMan = $('#body_man_container').html();
+            $(allMan).appendTo('#road_man_container');
+            $('#body_man_container').html('');
+        };     
+        addNewRunner = function() {
+            var singleMan = $('#initial-man-block').html();
+            $('#body_man_container').append(singleMan);
+        };     
+        // ------ START Manipulation { append, appendTo, pretend, pretendTo }
+        
+        // ------ START Attributes { html, val }
         showHtmlOnInput = function() {
             $('#input_dog_name').val($('#div_contain_name').html());
         };     
         changeDogTagName = function() {
             $('#dog').html($('#input_dog_name').val()); 
         };    
-        // ------ START CSS { html, var }
+        // ------ START Attributes { html, val }
         
-        // ------ START CSS { attr, prop }
+        // ------ START Attributes { attr, prop }
         removeAttrValue = function() {
             $('#input-check-attr-prop').removeAttr($('#textbox_remove_attr').val()); 
         };    
@@ -371,7 +454,7 @@
         };       
         checkAttrPropInput();
         checkAttrPropCheckbox();
-        // ------ START CSS { attr, prop }
+        // ------ START Attributes { attr, prop }
         
         // ------ START CSS { height, innerHeight, outerHeight() }
         changeButtonHeightScroll = function(element) {
@@ -778,7 +861,7 @@
             }
         })();
     </script>
-    <script type="text/javascript" src="js/jquery.carouFredSel-6.2.1-packed.js"></script>
+<!--    <script type="text/javascript" src="js/jquery.carouFredSel-6.2.1-packed.js"></script>-->
     <script type="text/javascript" src="js/jAlert-functions.min.js"></script>
     <script type="text/javascript" src="js/jAlert-v3.min.js"></script>
     <script type="text/javascript" src="js/jquery-ui.min.js"></script>
