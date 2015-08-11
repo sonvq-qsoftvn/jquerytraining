@@ -263,12 +263,55 @@
                 <path d="M0,2.5c0,0,298.666,0,399.333,0C448.336,2.5,513.994,13,597,13c77.327,0,135-10.5,200.999-10.5c95.996,0,402.001,0,402.001,0"></path>
             </svg>
         </span>
-        <div class="clear-both"></div>
+        <div class="clear-both"></div><br/>
         <button href="#" 
                 data-content="The value <span class='blue'><strong>attribute</strong></span> contains the <span class='red'><strong>initial</strong></span> text content of the value attribute from the HTML source code<br/><br/>The value <span class='blue'><strong>property</strong></span> reflects the <span class='red'><strong>current</strong></span> text content inside the input box <br/><br/>"
         class="modern-btn alert-button inline" data-show="flipInX" data-hide="flipOutX" data-size="lg">CODE</button>
     </div>
 </div>
+                    </section>
+                </div>
+                <!-- SLIDE 12 -->
+                <div class="slide styling" id="border-image">
+                    <h1>CSS { html, val }</h1>
+                    <section>
+<pre>
+        <button href="#" 
+            data-content="<span class='blue italic'>// val() get or set value of form elements (input, select, textarea)</span> <br/>$(<span class='red'>'#example'</span>).val()<br/>
+            $(<span class='red'>'#example'</span>).val('example text')<br/><br/>
+            <span class='blue italic'>// html() get or set the HTML content of element</span> <br/>
+            $(<span class='red'>'#example'</span>).html()<br/>
+            $(<span class='red'>'#example'</span>).html('new content')<br/><br/>"
+        class="modern-btn alert-button inline" data-size="lg" data-show="flipInX" data-hide="flipOutX">CODE</button>
+</pre>
+<div class="example relative html-val-example">
+    <span class="input input--jiro">
+        <input class="input__field input__field--jiro" type="text" id="input_dog_name" onkeyup="changeDogTagName()">
+        <label class="input__label input__label--jiro" for="input_dog_name">
+            <span class="input__label-content input__label-content--jiro">Your Dog's Name</span>
+        </label>
+    </span>
+    <div class="dog body bodySlant earsBasic">
+        <div class="face"></div>
+        <div class="features"></div>
+    </div>
+    <div id="div_contain_name" class="dog-tag-name" onclick="showHtmlOnInput()"><p id="dog"></p></div>
+</div>
+                </div>
+                <!-- SLIDE 3 -->
+                <div class="slide styling" id="welcome-slide">
+                    <h3>Manipulation Category</h3>
+                    <section>
+<pre>    
+    <b>1) append, appendTo, pretend, pretendTo</b><br>
+    <b>2) css</b><br>
+    <b>3) offset</b><br>
+    <b>4) position</b><br>
+    <b>5) scrollTop, scrollLeft</b><br>
+    <b>6) height, innerHeight, outerHeight</b><br>
+</pre>
+                    </section> 
+                </div>
                     </section>
                 </div>
             </div>
@@ -282,6 +325,15 @@
     <script type="text/javascript" src="js/classie.js"></script>
 <!--    <script type="text/javascript" src="js/jquery.nicescroll.min.js"></script>-->
     <script> 
+        // ------ START CSS { html, var }
+        showHtmlOnInput = function() {
+            $('#input_dog_name').val($('#div_contain_name').html());
+        };     
+        changeDogTagName = function() {
+            $('#dog').html($('#input_dog_name').val()); 
+        };    
+        // ------ START CSS { html, var }
+        
         // ------ START CSS { attr, prop }
         removeAttrValue = function() {
             $('#input-check-attr-prop').removeAttr($('#textbox_remove_attr').val()); 
@@ -726,7 +778,7 @@
             }
         })();
     </script>
-<!--    <script type="text/javascript" src="js/jquery.carouFredSel-6.2.1-packed.js"></script>-->
+    <script type="text/javascript" src="js/jquery.carouFredSel-6.2.1-packed.js"></script>
     <script type="text/javascript" src="js/jAlert-functions.min.js"></script>
     <script type="text/javascript" src="js/jAlert-v3.min.js"></script>
     <script type="text/javascript" src="js/jquery-ui.min.js"></script>
