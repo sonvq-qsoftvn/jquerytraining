@@ -317,8 +317,12 @@
                     <h1>Manipulation<br/>{ append, appendTo, pretend, pretendTo }</h1>
                     <section>
 <pre>
-<p class="inline margin-top-10"><b>.append('&lt;div class=&quot;body-man&quot;&gt;&lt;/div&gt;')<a class="display-inline button orange small margin-20 overflow-hidden" onclick="addNewRunner()">Add Runner  </a></b></p>
-<p class="inline margin-top-10"><b>.appendTo('&lt;div class=&quot;road&quot;&gt;&lt;/div&gt;')  <a class="display-inline button orange small margin-20 overflow-hidden" onclick="moveToLine()">Move To Line</a></b></p>
+<p class="inline margin-top-10"><b>$(e).append(<span class="blue blue-shadow">'&lt;div class=&quot;body-man&quot;&gt;&lt;/div&gt;'</span>)    <a class="display-inline button orange small margin-20 overflow-hidden" onclick="addNewRunner()">+ Runner</a></b></p>
+<p class="inline margin-top-10"><b>$(<span class="blue blue-shadow">'&lt;div class=&quot;man&quot;&gt;&lt;/div&gt;'</span>).appendTo(<span class="blue blue-shadow">'#road'</span>) <a class="display-inline button orange small margin-20 overflow-hidden" onclick="moveToLine()">Let's Go !</a></b></p>
+<button href="#" 
+        data-content="<span class='blue italic'>// Method <span class='red'><strong>append</strong></span> appends the parameter to the object you're working on</span> <br/>$(<span class='red'>'#example'</span>).append('Content to insert')<br/><br/>
+            <span class='blue italic'>// Method <span class='red'><strong>appendTo</strong></span> appends the object you're wokring on to the parameter</span> <br/>$('Content to insert').appendTo(<span class='red'>'#example'</span>)<br/><br/>"
+        class="modern-btn alert-button inline" data-size="lg" data-show="bounceIn" data-hide="bounceOut">CODE</button> <a class="display-inline button orange small margin-20 overflow-hidden" onclick="resetRunnerExample()">Reset</a>
 </pre>
 <div id="initial-man-block">
     <div class="body-man">
@@ -339,21 +343,7 @@
 </div>
 <div class="example relative no-padding append-example">  
     <div class="body-example" id="body_man_container">
-        <div class="body-man">
-            <div class="head-man"></div>
-            <div class="arm-man right-man">
-                <div class="forearm-man right-man"> </div>
-            </div>
-            <div class="arm-man left-man">
-                <div class="forearm-man left-man"> </div>
-            </div>
-            <div class="leg-man right-man">
-                <div class="underleg-man right-man"> </div>
-            </div>
-            <div class="leg-man left-man">
-                <div class="underleg-man left-man"> </div>
-            </div>
-        </div>
+        
     </div>
     <div class="side_bg">
         <div class="side_bg_black"></div>
@@ -397,6 +387,10 @@
 <!--    <script type="text/javascript" src="js/jquery.nicescroll.min.js"></script>-->
     <script> 
          // ------ START Manipulation { append, appendTo, pretend, pretendTo }
+         resetRunnerExample = function() {
+            $('#body_man_container').html('');
+            $('#road_man_container').html('<div class="divider"></div>');
+        };     
          moveToLine = function() {
             var allMan = $('#body_man_container').html();
             $(allMan).appendTo('#road_man_container');

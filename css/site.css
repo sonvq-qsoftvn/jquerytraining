@@ -825,73 +825,40 @@ video{-moz-border-radius:8px;-khtml-border-radius:8px;-webkit-border-radius:8px;
 }
 
 .body-example * {
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  animation-duration: 5s;
-  animation-fill-mode: forwards;
-  animation-direction: alternate;
-  background: black;
-  position: absolute;
-  border-radius: 5px;
+animation-iteration-count: infinite;
+animation-timing-function: linear;
+animation-duration: 5s;
+animation-fill-mode: forwards;
+animation-direction: alternate;
+background: white;
+position: absolute;
+border-radius: 5px;
 }
-.road .body-man { top: 40px !important; }
-
-.body-man {
-  left: -10vh;
-  top: 60px;
-  animation-direction: normal;
-  animation-name: body;
-  width: 5px;
-  height: 60px;
-  overflow: visible;
-}
-
-.head-man {
-  top: -30px;
-  left: -15px;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-}
+.body-man { left: -10vh; top: 35px; animation-direction: normal; animation-name: body; width: 5px; height: 60px; overflow: visible; }
+.head-man { top: -30px; left: -15px; width: 30px; height: 30px; border-radius: 50%; }
 
 .arm-man,
 .forearm-man,
 .leg-man,
-.underleg-man {
-  transform-origin: 50% 0%;
-  width: 5px;
-  height: 30px;
-}
+.underleg-man { transform-origin: 50% 0%; width: 5px; height: 30px; }
 
-.arm-man {
-  top: 10%;
-}
+.arm-man { top: 10%; }
 
 .forearm-man,
 .leg-man,
-.underleg-man {
-  top: 100%;
-}
+.underleg-man { top: 100%; }
 
 .arm-man.left-man,
-.leg-man.left-man {
-  transform: rotateZ(40deg);
-}
+.leg-man.left-man { transform: rotateZ(40deg); }
 
 .arm-man.right-man,
-.leg-man.right-man {
-  transform: rotateZ(-40deg);
-}
+.leg-man.right-man { transform: rotateZ(-40deg); }
 
 .forearm-man.right-man,
-.underleg-man.right-man {
-  transform: rotateZ(40deg);
-}
+.underleg-man.right-man { transform: rotateZ(40deg); }
 
 .forearm-man.left-man,
-.underleg-man.left-man {
-  transform: rotateZ(-40deg);
-}
+.underleg-man.left-man { transform: rotateZ(-40deg); }
 
 .leg-man,
 .arm-man,
@@ -917,3 +884,7 @@ video{-moz-border-radius:8px;-khtml-border-radius:8px;-webkit-border-radius:8px;
 .append-example { height: 350px !important; }
 .display-inline { display: inline; }
 .margin-top-10 { margin-top: 10px; }
+
+.blue-shadow { text-shadow: blue 0 0 1px; }
+
+.append-example { background-color: #9700FF !important; }
