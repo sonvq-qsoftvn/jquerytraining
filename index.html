@@ -4,6 +4,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/jquery-ui.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="css/site.css">
     <link href="http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Oswald:400,300" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <div id="container">
@@ -304,8 +305,8 @@
                     <section>
 <pre>    
     <b>1) append, appendTo, pretend, pretendTo</b><br>
-    <b>2) css</b><br>
-    <b>3) offset</b><br>
+    <b>2) before, insertBefore, after, insertAfter</b><br>
+    <b>3) empty, remove, detach</b><br>
     <b>4) position</b><br>
     <b>5) scrollTop, scrollLeft</b><br>
     <b>6) height, innerHeight, outerHeight</b><br>
@@ -314,7 +315,7 @@
                 </div>
                 <!-- SLIDE 14 -->
                 <div class="slide styling" id="border-image">
-                    <h1>Manipulation<br/>{ append, appendTo, pretend, pretendTo }</h1>
+                    <h1>{ append, appendTo, pretend, pretendTo }</h1>
                     <section>
 <pre>
 <p class="inline margin-top-10"><b>$(e).append(<span class="blue blue-shadow">'&lt;div class=&quot;body-man&quot;&gt;&lt;/div&gt;'</span>)    <a class="display-inline button orange small margin-20 overflow-hidden" onclick="addNewRunner()">+ Runner</a></b></p>
@@ -375,7 +376,68 @@
 </div>
                     </section>
                 </div>
+                <!-- SLIDE 15 -->
+                <div class="slide styling" id="border-image">
+                    <h1>{ before, insertBefore, after, insertAfter }</h1>
+                    <section>
+<pre>
+<p class="inline margin-top-10"><b>$('#dot').before(' <select id="set_character_before">
+        <option value="none"></option>
+        <option value="a">a</option><option value="b">b</option><option value="c">c</option><option value="d">d</option>
+        <option value="e">e</option><option value="f">f</option><option value="g">g</option><option value="h">h</option>
+        <option value="i">i</option><option value="j">j</option><option value="k">k</option><option value="l">l</option>
+        <option value="m">m</option><option value="n">n</option><option value="o">o</option><option value="p">p</option>
+        <option value="q">q</option><option value="r">r</option><option value="s">s</option><option value="t">t</option>
+        <option value="u">u</option><option value="v">v</option><option value="w">w</option><option value="x">x</option>
+        <option value="y">y</option><option value="z">z</option>
+    </select> ')      <a class="display-inline button orange small margin-20 overflow-hidden" onclick="addLetterBeforeDot()">Insert</a></b></p>
+<p class="inline margin-top-10"><b>$('#dot').after (' <select id="set_character_after">
+        <option value="none"></option>
+        <option value="a">a</option><option value="b">b</option><option value="c">c</option><option value="d">d</option>
+        <option value="e">e</option><option value="f">f</option><option value="g">g</option><option value="h">h</option>
+        <option value="i">i</option><option value="j">j</option><option value="k">k</option><option value="l">l</option>
+        <option value="m">m</option><option value="n">n</option><option value="o">o</option><option value="p">p</option>
+        <option value="q">q</option><option value="r">r</option><option value="s">s</option><option value="t">t</option>
+        <option value="u">u</option><option value="v">v</option><option value="w">w</option><option value="x">x</option>
+        <option value="y">y</option><option value="z">z</option>
+    </select> ')      <a class="display-inline button orange small margin-20 overflow-hidden" onclick="addLetterAfterDot()">Insert</a></b></p>
+<button href="#" 
+        data-content="<span class='blue italic'>// Method <span class='red'><strong>before</strong></span> inserts the argument before the selector</span> <br/>$(<span class='red'>'#foo'</span>).before('p')<br/><br/>
+            <span class='blue italic'>// Method <span class='red'><strong>insertBefore</strong></span> inserts the selector before the argument</span> <br/>$('p').insertBefore(<span class='red'>'#foo'</span>)<br/><br/>"
+        class="modern-btn alert-button inline" data-size="lg" data-show="bounceIn" data-hide="bounceOut">CODE</button> <a class="display-inline button orange small margin-20 overflow-hidden" onclick="resetBeforeAfterExample()">Reset</a>
+</pre>
+<div class="example example-before-after">
+    <div id="container-dot">
+        <span class="retro" id="base_dot">.</span>
+    </div>
+</div>
+                    </section>
+                </div>
+                <!-- SLIDE 16 -->
+                <div class="slide styling" id="border-image">
+                    <h1>{ empty, remove, detach }</h1>
+                    <section>
+<pre>
+
+<button href="#" 
+        data-content="<span class='blue italic'>// Method <span class='red'><strong>before</strong></span> inserts the argument before the selector</span> <br/>$(<span class='red'>'#foo'</span>).before('p')<br/><br/>
+            <span class='blue italic'>// Method <span class='red'><strong>insertBefore</strong></span> inserts the selector before the argument</span> <br/>$('p').insertBefore(<span class='red'>'#foo'</span>)<br/><br/>"
+        class="modern-btn alert-button inline" data-size="lg" data-show="bounceIn" data-hide="bounceOut">CODE</button> <a class="display-inline button orange small margin-20 overflow-hidden" onclick="resetBeforeAfterExample()">Reset</a>
+</pre>
+<div class="example text-left">
+    <form>
+        <div id="example-remove">
+            <div id="example-remove-content">Remove</div>
+        </div>
+        <input type='button' id="btnRemoveExample" Value=' Remove Div ' />
+        <input type='button' id='btnAddExample' Value='  Add Div  ' />
+        <br/><br/>
+    </form>
+</div>
+                    </section>
+                </div>
             </div>
+            <div class="pager-slider"></div>
             <a id="prev" class="" style="display: block;"></a>
             <a id="next" class="" style="display: block;"></a>
         </div>
@@ -386,7 +448,46 @@
     <script type="text/javascript" src="js/classie.js"></script>
 <!--    <script type="text/javascript" src="js/jquery.nicescroll.min.js"></script>-->
     <script> 
-         // ------ START Manipulation { append, appendTo, pretend, pretendTo }
+        // ------ START Manipulation { empty, remove, detach }
+        var dvjQuery = null;
+        $('#btnAddExample').attr('disabled','disabled');
+
+        $("#example-remove-content").hover(function() {
+            $(this).addClass('highlight');
+        }, function() {
+            $(this).removeClass('highlight');
+        });
+
+        $('#btnRemoveExample').click(function() {
+            dvjQuery = $("#example-remove-content").remove();
+            $(this).attr('disabled','disabled');
+            $('#btnAddExample').removeAttr('disabled');
+        });
+
+        $('#btnAddExample').click(function() {
+            $("#example-remove").html(dvjQuery);
+             $(this).attr('disabled','disabled');
+            $('#btnRemoveExample').removeAttr('disabled');
+        });
+        // ------ End Manipulation { empty, remove, detach }
+    
+        // ------ START Manipulation { before, insertBefore, after, insertAfter }
+        resetBeforeAfterExample = function() {
+            $('#container-dot').html('<span class="retro" id="base_dot">.</span>');
+        };     
+        addLetterBeforeDot = function() {
+            if ($('#set_character_before').val() != 'none') {
+                $('#base_dot').before('<span class="retro">' + $('#set_character_before').val() + '</span>');
+            }
+        };    
+        addLetterAfterDot = function() {
+            if ($('#set_character_after').val() != 'none') {
+                $('#base_dot').after('<span class="retro">' + $('#set_character_after').val() + '</span>');
+            }
+        };    
+        // ------ END Manipulation { before, insertBefore, after, insertAfter }
+        
+        // ------ START Manipulation { append, appendTo, pretend, pretendTo }
          resetRunnerExample = function() {
             $('#body_man_container').html('');
             $('#road_man_container').html('<div class="divider"></div>');
@@ -394,7 +495,6 @@
          moveToLine = function() {
             var allMan = $('#body_man_container').html();
             $(allMan).appendTo('#road_man_container');
-            $('#body_man_container').html('');
         };     
         addNewRunner = function() {
             var singleMan = $('#initial-man-block').html();
@@ -724,6 +824,7 @@
             $("#caroufredsel").carouFredSel({
                 responsive: true,
                 width: '100%',
+                'pagination': '.pager-slider',
                 items: {
                     visible: 1,
                     minimum: 1
