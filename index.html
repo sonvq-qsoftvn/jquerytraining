@@ -420,17 +420,39 @@
 <pre>
 
 <button href="#" 
-        data-content="<span class='blue italic'>// Method <span class='red'><strong>before</strong></span> inserts the argument before the selector</span> <br/>$(<span class='red'>'#foo'</span>).before('p')<br/><br/>
-            <span class='blue italic'>// Method <span class='red'><strong>insertBefore</strong></span> inserts the selector before the argument</span> <br/>$('p').insertBefore(<span class='red'>'#foo'</span>)<br/><br/>"
-        class="modern-btn alert-button inline" data-size="lg" data-show="bounceIn" data-hide="bounceOut">CODE</button> <a class="display-inline button orange small margin-20 overflow-hidden" onclick="resetBeforeAfterExample()">Reset</a>
+        data-content="<span class='blue italic'>// remove or detach an element</span> <br/><span class='violet'>var</span> divObject = $(<span class='red'>'#example'</span>).remove()<br/>
+        <span class='violet'>var</span> divObject = $(<span class='red'>'#example'</span>).detach()<br/><br/>
+        <span class='blue italic'>// Empty an element</span> <br/>$(<span class='red'>'#example'</span>).empty()<br/><br/>"
+        class="modern-btn alert-button inline" data-size="lg" data-show="zoomInDown" data-hide="zoomOutUp">CODE</button>
+<button href="#" 
+        data-content="<span class='blue italic'>// Method <span class='red'><strong>remove</strong></span> removes the element itself, and everything inside it. All events and jQuery data with element are removed</span> <br/><br/>
+        <span class='blue italic'>// Method <span class='red'><strong>detach</strong></span> is same as <span class='red'><strong>remove</strong></span> except that it keeps all jQuery data and events</span> <br/><br/>
+        <span class='blue italic'>// Method <span class='red'><strong>empty</strong></span> removes all the child content or element inside</span> <br/><br/>"
+        class="modern-btn alert-button inline" data-size="lg" data-show="flipInY" data-hide="flipOutY">MORE</button>
 </pre>
 <div class="example text-left">
     <form>
         <div id="example-remove">
-            <div id="example-remove-content">Remove</div>
+            <div id="example-remove-content">Example remove() jQuery</div>
         </div>
         <input type='button' id="btnRemoveExample" Value=' Remove Div ' />
         <input type='button' id='btnAddExample' Value='  Add Div  ' />
+        <br/><br/>
+    </form>
+    <form>
+        <div id="example-detach">
+            <div id="example-detach-content">Example detach() jQuery</div>
+        </div>
+        <input type='button' id="btnDetachExample" Value=' Detach Div ' />
+        <input type='button' id='btnAttachExample' Value='  Re-attach Div  ' />
+        <br/><br/>
+    </form>
+    <form>
+        <div id="example-empty">
+            <div id="example-empty-content">Example empty() jQuery</div>
+        </div>
+        <input type='button' id="btnEmptyExample" Value=' Empty Div ' />
+        <input type='button' id='btnReFillExample' Value='  Re-fill Div  ' />
         <br/><br/>
     </form>
 </div>
@@ -449,7 +471,7 @@
 <!--    <script type="text/javascript" src="js/jquery.nicescroll.min.js"></script>-->
     <script> 
         // ------ START Manipulation { empty, remove, detach }
-        var dvjQuery = null;
+        var dvjRemoveQuery = null;
         $('#btnAddExample').attr('disabled','disabled');
 
         $("#example-remove-content").hover(function() {
@@ -459,15 +481,58 @@
         });
 
         $('#btnRemoveExample').click(function() {
-            dvjQuery = $("#example-remove-content").remove();
+            dvjRemoveQuery = $("#example-remove-content").remove();
             $(this).attr('disabled','disabled');
             $('#btnAddExample').removeAttr('disabled');
         });
 
         $('#btnAddExample').click(function() {
-            $("#example-remove").html(dvjQuery);
+            $("#example-remove").html(dvjRemoveQuery);
              $(this).attr('disabled','disabled');
             $('#btnRemoveExample').removeAttr('disabled');
+        });
+        
+        
+        var dvjDetachQuery = null;
+        $('#btnAttachExample').attr('disabled','disabled');
+
+        $("#example-detach-content").hover(function() {
+            $(this).addClass('highlight');
+        }, function() {
+            $(this).removeClass('highlight');
+        });
+
+        $('#btnDetachExample').click(function() {
+            dvjDetachQuery = $("#example-detach-content").detach();
+            $(this).attr('disabled','disabled');
+            $('#btnAttachExample').removeAttr('disabled');
+        });
+
+        $('#btnAttachExample').click(function() {
+            $("#example-detach").html(dvjDetachQuery);
+             $(this).attr('disabled','disabled');
+            $('#btnDetachExample').removeAttr('disabled');
+        });
+        
+        var dvjEmptyQuery = $('#example-empty').html();
+        $('#btnReFillExample').attr('disabled','disabled');
+
+        $("#example-empty-content").hover(function() {
+            $(this).addClass('highlight');
+        }, function() {
+            $(this).removeClass('highlight');
+        });
+
+        $('#btnEmptyExample').click(function() {
+            $("#example-empty-content").empty();
+            $(this).attr('disabled','disabled');
+            $('#btnReFillExample').removeAttr('disabled');
+        });
+
+        $('#btnReFillExample').click(function() {
+            $("#example-empty").html(dvjEmptyQuery);
+             $(this).attr('disabled','disabled');
+            $('#btnEmptyExample').removeAttr('disabled');
         });
         // ------ End Manipulation { empty, remove, detach }
     

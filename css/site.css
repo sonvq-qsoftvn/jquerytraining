@@ -929,5 +929,7 @@ border-radius: 5px;
 .example-before-after { background:#f0e8db !important; }
 #container-dot { transform: rotate(-10deg); }
 
-#example-remove { display: inline-block; float: left; margin-right: 15px; }
-#example-remove div { font-size: 26px; }
+#example-remove, #example-detach, #example-empty { display: inline-block; float: left; margin-right: 15px; }
+#example-remove div, #example-detach div, #example-empty div { font-size: 26px; }
+
+.highlight { text-decoration: overline underline; color: red;}
