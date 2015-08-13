@@ -17,3 +17,6 @@ http://purecss3.net/doraemon/doraemon_css3.html
 
 
 http://www.jquerybyexample.net/2012/05/empty-vs-remove-vs-detach-jquery.html
+
+
+http://www.css-jquery-design.com/2014/10/animated-aquarium-with-pure-css/

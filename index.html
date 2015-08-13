@@ -307,9 +307,7 @@
     <b>1) append, appendTo, pretend, pretendTo</b><br>
     <b>2) before, insertBefore, after, insertAfter</b><br>
     <b>3) empty, remove, detach</b><br>
-    <b>4) position</b><br>
-    <b>5) scrollTop, scrollLeft</b><br>
-    <b>6) height, innerHeight, outerHeight</b><br>
+    <b>4) wrap, unwrap, wrapAll, wrapInner</b><br>
 </pre>
                     </section> 
                 </div>
@@ -435,26 +433,82 @@
         <div id="example-remove">
             <div id="example-remove-content">Example remove() jQuery</div>
         </div>
-        <input type='button' id="btnRemoveExample" Value=' Remove Div ' />
-        <input type='button' id='btnAddExample' Value='  Add Div  ' />
+        <span id="btnRemoveExample" class="button-nice">Remove Div</span>
+        <span id="btnAddExample" class="button-nice">Add Div</span>
         <br/><br/>
     </form>
     <form>
         <div id="example-detach">
             <div id="example-detach-content">Example detach() jQuery</div>
         </div>
-        <input type='button' id="btnDetachExample" Value=' Detach Div ' />
-        <input type='button' id='btnAttachExample' Value='  Re-attach Div  ' />
+        <span id="btnDetachExample" class="button-nice">Detach Div</span>
+        <span id="btnAttachExample" class="button-nice">Re-attach Div</span>
         <br/><br/>
     </form>
     <form>
         <div id="example-empty">
             <div id="example-empty-content">Example empty() jQuery</div>
         </div>
-        <input type='button' id="btnEmptyExample" Value=' Empty Div ' />
-        <input type='button' id='btnReFillExample' Value='  Re-fill Div  ' />
+        <span id="btnEmptyExample" class="button-nice">Empty Div</span>
+        <span id="btnReFillExample" class="button-nice">Re-fill Div</span>
         <br/><br/>
     </form>
+</div>
+                    </section>
+                </div>
+                <!-- SLIDE 16 -->
+                <div class="slide styling" id="border-image">
+                    <h1>{ wrap, unwrap, wrapAll, wrapInner }</h1>
+                    <section>
+<pre>
+<p class="inline margin-top-10">
+<a class="display-inline button orange small margin-20 overflow-hidden" onclick="wrapTankToFishExample()">wrap()</a><a class="display-inline button orange small margin-20 overflow-hidden" onclick="unWrapTankToFishExample()">unwrap()</a><a class="display-inline button orange small margin-20 overflow-hidden" onclick="wrapInnerFishToTankExample()">wrapInner()</a><a class="display-inline button orange small margin-20 overflow-hidden" onclick="unWrapInnerFishToTankExample()">empty()</a>
+<p class="margin-top-10 margin-left-18"><button href="#" 
+        data-content="<span class='blue italic'>// Method <span class='red'><strong>wrap</strong></span> wraps a HTML structure around an element</span> <br/>$(<span class='red'>'#fish'</span>).wrap($(<span class='red'>'#tank'</span>).html())<br/><br/>
+        <span class='blue italic'>// Method <span class='red'><strong>wrapInner</strong></span> allows an element to wrap around a HTML structure</span> <br/>$(<span class='red'>'#tank'</span>).wrapInner($(<span class='red'>'#fish'</span>).html())<br/><br/>
+        <span class='blue italic'>// Method <span class='red'><strong>unwrap</strong></span> removes the parent that wraps around an element</span> <br/>$(<span class='red'>'#fish'</span>).unwrap()<br/><br/>
+        <span class='blue italic'>// Method <span class='red'><strong>wrapAll</strong></span> wraps a HTML structure around all matched elements</span> <br/>$(<span class='red'>'#fish'</span>).wrapAll($(<span class='red'>'#tank'</span>).html())<br/><br/>"
+        class="modern-btn alert-button inline" data-size="lg" data-show="zoomInDown" data-hide="zoomOutUp">CODE</button></p>
+
+</pre>
+<div id="initial_wrap_tank">
+    <div class="fishtank_wrap">
+
+    </div>
+</div>
+<div id="initial_wrap_fish">
+    <div class="fish_wrap">
+        <div class="fred">
+            <div class="top_fin"></div>
+            <div class="tail_fin"></div>
+            <div class="fish_body">
+                <div class="eye"></div>
+                <div class="scale_1"></div>
+                <div class="scale_2"></div>
+                <div class="scale_3"></div>
+                <div class="scale_4"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="example relative fish-example">
+    <div class="fish_wrap" id="fish_to_wrap">
+        <div class="fred">
+            <div class="top_fin"></div>
+            <div class="tail_fin"></div>
+            <div class="fish_body">
+                <div class="eye"></div>
+                <div class="scale_1"></div>
+                <div class="scale_2"></div>
+                <div class="scale_3"></div>
+                <div class="scale_4"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="fishtank_wrap" id="tank_to_wrap">
+        
+    </div>
 </div>
                     </section>
                 </div>
@@ -470,9 +524,27 @@
     <script type="text/javascript" src="js/classie.js"></script>
 <!--    <script type="text/javascript" src="js/jquery.nicescroll.min.js"></script>-->
     <script> 
+        // ------ START Manipulation { wrap, unwrap, wrapAll, wrapInner }    
+        wrapTankToFishExample = function() {
+            $('#fish_to_wrap').wrap($('#initial_wrap_tank').html());
+            
+        };  
+        unWrapTankToFishExample = function() {
+            $('#fish_to_wrap').unwrap();
+        };  
+        
+        wrapInnerFishToTankExample = function() {
+            $('#tank_to_wrap').wrapInner($('#initial_wrap_fish').html());
+        };  
+        
+        unWrapInnerFishToTankExample = function() {
+            $('#tank_to_wrap').empty();
+        };  
+        
         // ------ START Manipulation { empty, remove, detach }
+        //-- Remve example
         var dvjRemoveQuery = null;
-        $('#btnAddExample').attr('disabled','disabled');
+        $('#btnAddExample').addClass('disabled');
 
         $("#example-remove-content").hover(function() {
             $(this).addClass('highlight');
@@ -482,19 +554,19 @@
 
         $('#btnRemoveExample').click(function() {
             dvjRemoveQuery = $("#example-remove-content").remove();
-            $(this).attr('disabled','disabled');
-            $('#btnAddExample').removeAttr('disabled');
+            $(this).addClass('disabled');
+            $('#btnAddExample').removeClass('disabled');
         });
 
         $('#btnAddExample').click(function() {
             $("#example-remove").html(dvjRemoveQuery);
-             $(this).attr('disabled','disabled');
-            $('#btnRemoveExample').removeAttr('disabled');
+             $(this).addClass('disabled');
+            $('#btnRemoveExample').removeClass('disabled');
         });
         
-        
+        //-- Detach example
         var dvjDetachQuery = null;
-        $('#btnAttachExample').attr('disabled','disabled');
+        $('#btnAttachExample').addClass('disabled');
 
         $("#example-detach-content").hover(function() {
             $(this).addClass('highlight');
@@ -504,18 +576,19 @@
 
         $('#btnDetachExample').click(function() {
             dvjDetachQuery = $("#example-detach-content").detach();
-            $(this).attr('disabled','disabled');
-            $('#btnAttachExample').removeAttr('disabled');
+            $(this).addClass('disabled');
+            $('#btnAttachExample').removeClass('disabled');
         });
 
         $('#btnAttachExample').click(function() {
             $("#example-detach").html(dvjDetachQuery);
-             $(this).attr('disabled','disabled');
-            $('#btnDetachExample').removeAttr('disabled');
+             $(this).addClass('disabled');
+            $('#btnDetachExample').removeClass('disabled');
         });
         
+        //-- Empty example
         var dvjEmptyQuery = $('#example-empty').html();
-        $('#btnReFillExample').attr('disabled','disabled');
+        $('#btnReFillExample').addClass('disabled');
 
         $("#example-empty-content").hover(function() {
             $(this).addClass('highlight');
@@ -525,14 +598,14 @@
 
         $('#btnEmptyExample').click(function() {
             $("#example-empty-content").empty();
-            $(this).attr('disabled','disabled');
-            $('#btnReFillExample').removeAttr('disabled');
+            $(this).addClass('disabled');
+            $('#btnReFillExample').removeClass('disabled');
         });
 
         $('#btnReFillExample').click(function() {
             $("#example-empty").html(dvjEmptyQuery);
-             $(this).attr('disabled','disabled');
-            $('#btnEmptyExample').removeAttr('disabled');
+             $(this).addClass('disabled');
+            $('#btnEmptyExample').removeClass('disabled');
         });
         // ------ End Manipulation { empty, remove, detach }
     
@@ -1021,7 +1094,7 @@
             }
         })();
     </script>
-<!--    <script type="text/javascript" src="js/jquery.carouFredSel-6.2.1-packed.js"></script>-->
+    <script type="text/javascript" src="js/jquery.carouFredSel-6.2.1-packed.js"></script>
     <script type="text/javascript" src="js/jAlert-functions.min.js"></script>
     <script type="text/javascript" src="js/jAlert-v3.min.js"></script>
     <script type="text/javascript" src="js/jquery-ui.min.js"></script>
