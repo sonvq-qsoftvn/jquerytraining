@@ -4,7 +4,8 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/jquery-ui.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="css/site.css">
     <link href="http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono" rel="stylesheet" type="text/css" />
-    <link href="http://fonts.googleapis.com/css?family=Oswald:400,300" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Oswald:400,300" rel="stylesheet" type="text/css" /> 
+    <link rel="stylesheet" type="text/css" media="screen" href="css/monokai.css">
 </head>
 <body>
     <div id="container">
@@ -45,30 +46,30 @@
                     <h1>CSS {has / add / remove / toggleClass}</h1>
                     <section>
 <pre>
-    <p class="inline"><b>hasClass( <select id="has-class-select" onchange='changeHasClass(event)'>
-        <option value="minion">minion</option>
-        <option value="green">green</option>
-    </select> ) = <span id="hasClassResult"></span></b></p>
-    <p class="inline"><b>addClass( <select id="add-class-select" onchange='changeAddClass(event)'>
-        <option value=""></option>
-        <option value="minion">minion</option>
-        <option value="green">green</option>
-        <option value="minion green">minion green</option>
-    </select> ); removeClass( <select id="remove-class-select" onchange='changeRemoveClass(event)'>
-        <option value=""></option>
-        <option value="minion">minion</option>
-        <option value="green">green</option>
-        <option value="all">all</option>
-    </select> );</b></p>
-    <p class="inline"><b>toggleClass( <button data-class="minion" onclick='changeToggleClass(this)' class="minion-btn"></button> <button data-class="green" onclick='changeToggleClass(this)' class="green-btn"></button> );</b></p>
-    <button href="#" 
-            data-content="<span class='blue italic'>// check has class, return true/false</span> <br/>$(<span class='red'>'#example'</span>).hasClass(<span class='red'>'minion'</span>)<br/><br/>
-            <span class='blue italic'>// add class</span><br/>$(<span class='red'>'#example'</span>).addClass(<span class='red'>'minion'</span>)<br/>$(<span class='red'>'#example'</span>).addClass(<span class='red'>'minion green'</span>)<br/><br/>
-            <span class='blue italic'>// remove class</span><br/>$(<span class='red'>'#example'</span>).removeClass(<span class='red'>'minion'</span>)<br/>$(<span class='red'>'#example'</span>).removeClass()<br/><br/>
-            <span class='blue italic'>// toggle class</span><br/>$(<span class='red'>'#example'</span>).toggleClass(<span class='red'>'minion'</span>)<br/><br/>" 
-        class="modern-btn alert-button" data-show="flipInX" data-hide="flipOutX">CODE</button>
+<p class="inline"><b>hasClass( <select id="has-class-select" onchange='changeHasClass(event)'>
+    <option value="minion">minion</option>
+    <option value="green">green</option>
+</select> ) = <span id="hasClassResult"></span>;</b>    <b>toggleClass( <button data-class="minion" onclick='changeToggleClass(this)' class="minion-btn"></button> <button data-class="green" onclick='changeToggleClass(this)' class="green-btn"></button> );</b></p>
+<p class="inline"><b>addClass( <select id="add-class-select" onchange='changeAddClass(event)'>
+    <option value=""></option>
+    <option value="minion">minion</option>
+    <option value="green">green</option>
+    <option value="minion green">minion green</option>
+</select> );     removeClass( <select id="remove-class-select" onchange='changeRemoveClass(event)'>
+    <option value=""></option>
+    <option value="minion">minion</option>
+    <option value="green">green</option>
+    <option value="all">all</option>
+</select> );</b></p>
+<button href="#" 
+        data-content="<span class='blue italic'>// check has class, return true/false</span> <br/>$(<span class='red'>'#example'</span>).hasClass(<span class='red'>'minion'</span>)<br/><br/>
+        <span class='blue italic'>// add class</span><br/>$(<span class='red'>'#example'</span>).addClass(<span class='red'>'minion'</span>)<br/>$(<span class='red'>'#example'</span>).addClass(<span class='red'>'minion green'</span>)<br/><br/>
+        <span class='blue italic'>// remove class</span><br/>$(<span class='red'>'#example'</span>).removeClass(<span class='red'>'minion'</span>)<br/>$(<span class='red'>'#example'</span>).removeClass()<br/><br/>
+        <span class='blue italic'>// toggle class</span><br/>$(<span class='red'>'#example'</span>).toggleClass(<span class='red'>'minion'</span>)<br/><br/>" 
+    class="modern-btn alert-button" data-show="flipInX" data-hide="flipOutX">CODE</button>
 </pre>
-<div class="example">
+<pre><code class="html"><p class="inline" id="text-html-class-css"></p></code></pre>
+<div class="example" id="class-css-example">
     <div id="has-class-example"></div>
 </div>
                     </section>
@@ -213,7 +214,7 @@
                     <section>
 <pre>    
     <b>1) attr, removeAttr, prop, removeProp</b><br>
-    <b>2) html, val</b><br>
+    <b>2) html, val, text</b><br>
 </pre>
                     </section> 
                 </div>
@@ -274,7 +275,7 @@
                 </div>
                 <!-- SLIDE 12 -->
                 <div class="slide styling" id="border-image">
-                    <h1>Attributes { html, val }</h1>
+                    <h1>Attributes { html, val, text }</h1>
                     <section>
 <pre>
         <button href="#" 
@@ -282,9 +283,13 @@
             $(<span class='red'>'#example'</span>).val('example text')<br/><br/>
             <span class='blue italic'>// html() get or set the HTML content of element</span> <br/>
             $(<span class='red'>'#example'</span>).html()<br/>
-            $(<span class='red'>'#example'</span>).html('new content')<br/><br/>"
+            $(<span class='red'>'#example'</span>).html('new content')<br/><br/>
+            <span class='blue italic'>// text() get or set text content of element</span> <br/>
+            $(<span class='red'>'#example'</span>).text()<br/>
+            $(<span class='red'>'#example'</span>).text('new content')<br/><br/>"
         class="modern-btn alert-button inline" data-size="lg" data-show="flipInX" data-hide="flipOutX">CODE</button>
 </pre>
+<pre><code class="html"><p class="inline margin-top-10" id="text-html-val"></p></code></pre>
 <div class="example relative html-val-example">
     <span class="input input--jiro">
         <input class="input__field input__field--jiro" type="text" id="input_dog_name" onkeyup="changeDogTagName()">
@@ -381,33 +386,32 @@
 <pre>
 <p class="inline margin-top-10"><b>$('#dot').before(' <select id="set_character_before">
         <option value="none"></option>
-        <option value="a">a</option><option value="b">b</option><option value="c">c</option><option value="d">d</option>
-        <option value="e">e</option><option value="f">f</option><option value="g">g</option><option value="h">h</option>
-        <option value="i">i</option><option value="j">j</option><option value="k">k</option><option value="l">l</option>
-        <option value="m">m</option><option value="n">n</option><option value="o">o</option><option value="p">p</option>
-        <option value="q">q</option><option value="r">r</option><option value="s">s</option><option value="t">t</option>
-        <option value="u">u</option><option value="v">v</option><option value="w">w</option><option value="x">x</option>
-        <option value="y">y</option><option value="z">z</option>
+        <option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option>
+        <option value="E">E</option><option value="F">F</option><option value="G">G</option><option value="H">H</option>
+        <option value="I">I</option><option value="J">J</option><option value="K">K</option><option value="L">L</option>
+        <option value="M">M</option><option value="N">N</option><option value="O">O</option><option value="P">P</option>
+        <option value="Q">Q</option><option value="R">R</option><option value="S">S</option><option value="T">T</option>
+        <option value="U">U</option><option value="V">V</option><option value="W">W</option><option value="X">X</option>
+        <option value="Y">Y</option><option value="Z">Z</option>
     </select> ')      <a class="display-inline button orange small margin-20 overflow-hidden" onclick="addLetterBeforeDot()">Insert</a></b></p>
 <p class="inline margin-top-10"><b>$('#dot').after (' <select id="set_character_after">
         <option value="none"></option>
-        <option value="a">a</option><option value="b">b</option><option value="c">c</option><option value="d">d</option>
-        <option value="e">e</option><option value="f">f</option><option value="g">g</option><option value="h">h</option>
-        <option value="i">i</option><option value="j">j</option><option value="k">k</option><option value="l">l</option>
-        <option value="m">m</option><option value="n">n</option><option value="o">o</option><option value="p">p</option>
-        <option value="q">q</option><option value="r">r</option><option value="s">s</option><option value="t">t</option>
-        <option value="u">u</option><option value="v">v</option><option value="w">w</option><option value="x">x</option>
-        <option value="y">y</option><option value="z">z</option>
+        <option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option>
+        <option value="E">E</option><option value="F">F</option><option value="G">G</option><option value="H">H</option>
+        <option value="I">I</option><option value="J">J</option><option value="K">K</option><option value="L">L</option>
+        <option value="M">M</option><option value="N">N</option><option value="O">O</option><option value="P">P</option>
+        <option value="Q">Q</option><option value="R">R</option><option value="S">S</option><option value="T">T</option>
+        <option value="U">U</option><option value="V">V</option><option value="W">W</option><option value="X">X</option>
+        <option value="Y">Y</option><option value="Z">Z</option>
     </select> ')      <a class="display-inline button orange small margin-20 overflow-hidden" onclick="addLetterAfterDot()">Insert</a></b></p>
 <button href="#" 
         data-content="<span class='blue italic'>// Method <span class='red'><strong>before</strong></span> inserts the argument before the selector</span> <br/>$(<span class='red'>'#foo'</span>).before('p')<br/><br/>
             <span class='blue italic'>// Method <span class='red'><strong>insertBefore</strong></span> inserts the selector before the argument</span> <br/>$('p').insertBefore(<span class='red'>'#foo'</span>)<br/><br/>"
         class="modern-btn alert-button inline" data-size="lg" data-show="bounceIn" data-hide="bounceOut">CODE</button> <a class="display-inline button orange small margin-20 overflow-hidden" onclick="resetBeforeAfterExample()">Reset</a>
 </pre>
+<pre><code class="html"><p class="inline margin-top-10" id="text-before-after-code"></p></code></pre>
 <div class="example example-before-after">
-    <div id="container-dot">
-        <span class="retro" id="base_dot">.</span>
-    </div>
+    <div id="container-dot" class="retro">VU<span id="base_dot">.</span>SON</div>
 </div>
                     </section>
                 </div>
@@ -522,8 +526,10 @@
 <div id="footer">
     <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="js/classie.js"></script>
-<!--    <script type="text/javascript" src="js/jquery.nicescroll.min.js"></script>-->
-    <script> 
+    <script type="text/javascript" src="js/highlight.min.js"></script>
+    <script type="text/javascript" src="js/jquery.nicescroll.min.js"></script>
+
+    <script>               
         // ------ START Manipulation { wrap, unwrap, wrapAll, wrapInner }    
         wrapTankToFishExample = function() {
             $('#fish_to_wrap').wrap($('#initial_wrap_tank').html());
@@ -610,17 +616,33 @@
         // ------ End Manipulation { empty, remove, detach }
     
         // ------ START Manipulation { before, insertBefore, after, insertAfter }
+        $('#text-before-after-code').text($('#container-dot').html());
         resetBeforeAfterExample = function() {
-            $('#container-dot').html('<span class="retro" id="base_dot">.</span>');
+            $('#container-dot').html('<span id="base_dot">.</span>');
+            
+            $('#text-before-after-code').text($('#container-dot').html());
+            $('pre code').each(function(i, block) {
+                hljs.highlightBlock(block);
+            });
         };     
         addLetterBeforeDot = function() {
             if ($('#set_character_before').val() != 'none') {
-                $('#base_dot').before('<span class="retro">' + $('#set_character_before').val() + '</span>');
+                $('#base_dot').before($('#set_character_before').val());
+                
+                $('#text-before-after-code').text($('#container-dot').html());
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });
             }
         };    
         addLetterAfterDot = function() {
             if ($('#set_character_after').val() != 'none') {
-                $('#base_dot').after('<span class="retro">' + $('#set_character_after').val() + '</span>');
+                $('#base_dot').after($('#set_character_after').val());
+                
+                $('#text-before-after-code').text($('#container-dot').html());
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });
             }
         };    
         // ------ END Manipulation { before, insertBefore, after, insertAfter }
@@ -640,14 +662,19 @@
         };     
         // ------ START Manipulation { append, appendTo, pretend, pretendTo }
         
-        // ------ START Attributes { html, val }
+        // ------ START Attributes { html, val, text }
+        $('#text-html-val').text($('#div_contain_name').html());
         showHtmlOnInput = function() {
             $('#input_dog_name').val($('#div_contain_name').html());
         };     
         changeDogTagName = function() {
             $('#dog').html($('#input_dog_name').val()); 
+            $('#text-html-val').text($('#div_contain_name').html());
+            $('pre code').each(function(i, block) {
+                hljs.highlightBlock(block);
+            });
         };    
-        // ------ START Attributes { html, val }
+        // ------ START Attributes { html, val, text }
         
         // ------ START Attributes { attr, prop }
         removeAttrValue = function() {
@@ -901,13 +928,17 @@
         });
         // ------ END CSS { css() }
 		
-        // ------ START CSS {has / add / remove / toggleClass}
+        // ------ START CSS {has / add / remove / toggleClass}        
         changeHasClass = function(event) {
             if ($('#has-class-example').hasClass($('#has-class-select').val())) {
                 $('#hasClassResult').html('TRUE');
             } else {
                 $('#hasClassResult').html('FALSE');
             }
+            $('#text-html-class-css').text($('#class-css-example').html());
+            $('pre code').each(function(i, block) {
+                hljs.highlightBlock(block);
+            });
         };
         changeHasClass();
         changeAddClass = function(event) {
@@ -929,7 +960,7 @@
         // ----- END CSS {has / add / remove / toggleClass}
         
         $(document).ready(function() {
-//            $("html").niceScroll();
+            $("html").niceScroll();
             
             // Build "dynamic" rulers by adding items
             $(".ruler[data-items]").each(function() {
@@ -1098,6 +1129,11 @@
     <script type="text/javascript" src="js/jAlert-functions.min.js"></script>
     <script type="text/javascript" src="js/jAlert-v3.min.js"></script>
     <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script>
+        // ------ START highlighting CODE    
+        hljs.initHighlightingOnLoad();
+        // ------ END highlighting CODE
+    </script>
 </div>		
 </body>
 
