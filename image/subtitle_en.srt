@@ -1,0 +1,15 @@
+1
+00:00:02,000 --> 00:00:04,500
+Hi everyone. I am Son from team 4
+
+2
+00:00:04,680 --> 00:00:06,580
+Thank for your attention
+
+3
+00:00:06,750 --> 00:00:09,350
+We will continue with jQuery Ajax
+
+4
+00:00:09,500 --> 00:00:13,000
+Hope you like my presentation. Good bye :D

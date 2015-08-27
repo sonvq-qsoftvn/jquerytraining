@@ -1785,3 +1785,9 @@ border-radius: 5px;
 code { margin-top: 5px !important; }
 code p.inline { line-height: 16px; }
 #class-css-example { height: 245px !important; }
+
+.videosubbar {
+    color: #FFF !important;
+    font-size: 35px !important;
+    text-shadow: black -2px 1px, black 1px 2px, black 1px 0px, black 0px -1px !important;
+}
